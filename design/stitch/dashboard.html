@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Library System</title><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-background":"#111c2d","inverse-primary":"#d2bbff","surface-container-high":"#dee8ff","primary-fixed":"#eaddff","surface-container-low":"#f0f3ff","on-tertiary-fixed-variant":"#92002a","primary":"#630ed4","on-primary-fixed-variant":"#5a00c6","tertiary-container":"#c81a42","on-secondary-fixed":"#00201c","tertiary":"#a0002f","secondary":"#006b5f","surface-tint":"#732ee4","on-error":"#ffffff","on-tertiary-fixed":"#40000d","surface":"#f9f9ff","surface-container":"#e7eeff","secondary-container":"#6df5e1","on-secondary-container":"#006f64","surface-dim":"#cfdaf2","on-error-container":"#93000a","primary-container":"#7c3aed","outline-variant":"#ccc3d8","outline":"#7b7487","inverse-on-surface":"#ecf1ff","surface-container-lowest":"#ffffff","on-primary-fixed":"#25005a","tertiary-fixed-dim":"#ffb2b7","on-secondary-fixed-variant":"#005048","error-container":"#ffdad6","on-secondary":"#ffffff","surface-container-highest":"#d8e3fb","tertiary-fixed":"#ffdadb","on-surface":"#111c2d","on-tertiary-container":"#ffdedf","on-tertiary":"#ffffff","inverse-surface":"#263143","error":"#ba1a1a","on-primary":"#ffffff","on-primary-container":"#ede0ff","surface-bright":"#f9f9ff","primary-fixed-dim":"#d2bbff","surface-variant":"#d8e3fb","on-surface-variant":"#4a4455","secondary-fixed":"#71f8e4","secondary-fixed-dim":"#4fdbc8","background":"#f9f9ff"},borderRadius:{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},spacing:{"space-md":"1rem","space-lg":"1.5rem","space-xs":"0.25rem","space-xl":"2.5rem","gutter":"1.5rem","gutter-mobile":"1rem","margin-mobile":"1rem","space-sm":"0.5rem","margin":"2rem"},fontFamily:{"display-lg-mobile":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-sm":["Inter"],"body-sm":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"label-lg":["Inter"],"label-md":["Inter"],"headline-lg":["Plus Jakarta Sans"]},fontSize:{"display-lg-mobile":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["1rem",{lineHeight:"1.5rem",letterSpacing:"0",fontWeight:"400"}],"headline-xl":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.025em",fontWeight:"700"}],"display-lg":["3.5rem",{lineHeight:"4.25rem",letterSpacing:"-0.03em",fontWeight:"700"}],"headline-md":["1.25rem",{lineHeight:"1.75rem",letterSpacing:"-0.015em",fontWeight:"600"}],"label-sm":["0.6875rem",{lineHeight:"0.875rem",letterSpacing:"0.03em",fontWeight:"500"}],"body-sm":["0.875rem",{lineHeight:"1.25rem",letterSpacing:"0.005em",fontWeight:"400"}],"headline-sm":["1.125rem",{lineHeight:"1.5rem",letterSpacing:"-0.01em",fontWeight:"600"}],"body-lg":["1.125rem",{lineHeight:"1.75rem",letterSpacing:"0",fontWeight:"400"}],"headline-xl-mobile":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.02em",fontWeight:"700"}],"label-lg":["0.875rem",{lineHeight:"1.25rem",letterSpacing:"0.01em",fontWeight:"600"}],"label-md":["0.75rem",{lineHeight:"1rem",letterSpacing:"0.02em",fontWeight:"600"}],"headline-lg":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.02em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen relative overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed"><div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden"><div class="absolute -top-32 -left-24 w-96 h-96 rounded-full bg-gradient-to-tr from-purple-200/40 via-pink-200/40 to-rose-100/30 blur-3xl"></div><div class="absolute top-1/4 -right-32 w-[32rem] h-[32rem] rounded-full bg-gradient-to-br from-sky-200/35 via-teal-100/30 to-indigo-100/30 blur-3xl"></div><div class="absolute -bottom-24 left-1/3 w-[28rem] h-[28rem] rounded-full bg-gradient-to-tr from-emerald-100/30 via-orange-100/25 to-purple-100/35 blur-3xl"></div></div><header class="fixed top-0 inset-x-0 z-50"><div class="h-24 max-w-7xl mx-auto px-6 flex items-center justify-between"><div class="w-full bg-surface-container-lowest/60 backdrop-blur-2xl shadow-[0_8px_32px_-4px_rgba(30,41,59,0.06),0_2px_8px_-2px_rgba(30,41,59,0.03)] rounded-full px-space-lg py-space-sm flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="Library System Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WKR-G6oOCLDErtete6G1tEG6lAoWIvGLWHsYWaR39kXGqNwxFM0-el7J0AxRmd_9Omod13M0i76-rNoGv_YHaKHWmFWWJkX0ReATwT_KwBmMjLaAArORg4qVOy2mfd5pvEaif3883qOBOWvaRpU9J4J7GAn6mqDVc59cWkr14c0Jf7lWJuVjbJxebhgqnXYTpZwjKcP8c88v16ssWb4kEwRTS-3LYQP7XRTA3YT1g"/><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Library System</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed">v2.4 Pro</span></div></div><nav class="hidden md:flex items-center gap-1 bg-surface-container-low/70 backdrop-blur-md p-1 rounded-full" data-active-classes="bg-primary-container text-on-primary-container shadow-sm"><a class="font-label-lg text-label-lg px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="dashboard" href="#">Dashboard</a><a class="font-label-lg text-label-lg px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="buku" href="#">Buku</a><a class="font-label-lg text-label-lg px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="kategori" href="#">Kategori</a><a class="font-label-lg text-label-lg px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="anggota" href="#">Anggota</a></nav><div class="flex items-center gap-space-sm"><button class="hidden lg:flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-low/80 hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-all" type="button"><span class="material-symbols-outlined text-base">search</span><span class="font-label-md text-label-md">Cari...</span><kbd class="font-label-sm text-label-sm bg-surface-container-lowest/80 px-1.5 py-0.5 rounded-full text-on-surface-variant shadow-xs">Ctrl+K</kbd></button><button aria-label="Notifikasi" class="relative p-2 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tertiary-container"></span></button><div class="hidden sm:flex items-center gap-space-xs pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClp2gPqlhVEYcU8XEOGtzon0GndrWN3JYDIxGFHts1Fw_lQdIg72I2j2EMHO8QGSEnTNC2mNiBaheH-Z7ul8UKypCu5zQbiX5xDvuR4mOCPwN_LiT1H5zyCVP5Hk2gsMKs-LxoG0v2UlK68E503BRW4BX5nSnIaryvB_tp4Y0e0OcFOW2kccNDQI0Zi3HafPDaEl9T2OSmbQziwxUHp9aXCCjRjB0XXqO7xOrdB_k"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface leading-tight">Sinta Dewi</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Pustakawan</span></div></div><a class="font-label-lg text-label-lg flex items-center gap-1 px-space-md py-1.5 rounded-full bg-surface-container-low/80 text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-all" data-path="masuk" href="#"><span class="material-symbols-outlined text-base">logout</span><span class="hidden xl:inline">Keluar</span></a></div></div></div></header><main class="w-full pt-24"><div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto px-6 py-space-xl flex flex-col gap-space-xl">
+<!-- Top Bar: Page Meta & Primary Quick Action -->
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Library System</h1>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-fixed/70 text-on-primary-fixed font-label-sm text-label-sm shadow-sm backdrop-blur-md">
+            Sistem Sederhana v2.4
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Sistem Informasi Perpustakaan Sederhana • Manajemen katalog dan sirkulasi pintar
+        </p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-lowest/70 backdrop-blur-xl shadow-[0_4px_20px_-2px_rgba(30,41,59,0.04)] text-on-surface-variant font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span>Sistem Sinkron • Basis Data Terkini</span>
+</div>
+<button class="inline-flex items-center gap-2 px-space-lg py-3 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-[0_8px_24px_-4px_rgba(99,14,212,0.35)] hover:shadow-[0_12px_28px_-4px_rgba(99,14,212,0.45)] hover:opacity-95 transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer" type="button">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+<span>Tambah Buku Baru</span>
+</button>
+</div>
+</div>
+<!-- 3-Column Glass Metric Statistics Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Metric 1: Jumlah Buku -->
+<div class="relative overflow-hidden rounded-lg p-space-xl bg-surface-container-lowest/60 backdrop-blur-2xl shadow-[0_12px_36px_-6px_rgba(30,41,59,0.06),0_2px_8px_-2px_rgba(30,41,59,0.03)] group transition-all duration-300 hover:-translate-y-1">
+<div class="absolute -right-8 -top-8 w-44 h-44 rounded-full bg-primary-fixed/40 blur-2xl pointer-events-none transition-all group-hover:scale-125"></div>
+<div class="relative flex flex-col justify-between h-full gap-space-lg">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">Jumlah Buku</span>
+<span class="font-display-lg text-display-lg text-on-surface leading-none tracking-tight">14.820</span>
+</div>
+<div class="w-14 h-14 rounded-full bg-primary-fixed/70 text-primary flex items-center justify-center shadow-inner backdrop-blur-md">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+24 judul bulan ini</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">92% Layak Sirkulasi</span>
+</div>
+</div>
+</div>
+<!-- Metric 2: Jumlah Member -->
+<div class="relative overflow-hidden rounded-lg p-space-xl bg-surface-container-lowest/60 backdrop-blur-2xl shadow-[0_12px_36px_-6px_rgba(30,41,59,0.06),0_2px_8px_-2px_rgba(30,41,59,0.03)] group transition-all duration-300 hover:-translate-y-1">
+<div class="absolute -right-8 -top-8 w-44 h-44 rounded-full bg-secondary-fixed/40 blur-2xl pointer-events-none transition-all group-hover:scale-125"></div>
+<div class="relative flex flex-col justify-between h-full gap-space-lg">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">Jumlah Member</span>
+<span class="font-display-lg text-display-lg text-on-surface leading-none tracking-tight">3.150</span>
+</div>
+<div class="w-14 h-14 rounded-full bg-secondary-fixed/70 text-secondary flex items-center justify-center shadow-inner backdrop-blur-md">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span>98% Akun aktif</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">540 Mahasiswa aktif</span>
+</div>
+</div>
+</div>
+<!-- Metric 3: Jumlah Kategori -->
+<div class="relative overflow-hidden rounded-lg p-space-xl bg-surface-container-lowest/60 backdrop-blur-2xl shadow-[0_12px_36px_-6px_rgba(30,41,59,0.06),0_2px_8px_-2px_rgba(30,41,59,0.03)] group transition-all duration-300 hover:-translate-y-1">
+<div class="absolute -right-8 -top-8 w-44 h-44 rounded-full bg-tertiary-fixed/40 blur-2xl pointer-events-none transition-all group-hover:scale-125"></div>
+<div class="relative flex flex-col justify-between h-full gap-space-lg">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">Jumlah Kategori</span>
+<span class="font-display-lg text-display-lg text-on-surface leading-none tracking-tight">24</span>
+</div>
+<div class="w-14 h-14 rounded-full bg-tertiary-fixed/70 text-tertiary flex items-center justify-center shadow-inner backdrop-blur-md">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">category</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">folder_open</span>
+<span>Klasifikasi DDC Internasional</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">12 Subseksi</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Analytic Glass Row: Lending Snapshot -->
+<div class="rounded-lg p-space-lg bg-surface-container-lowest/40 backdrop-blur-2xl shadow-[0_8px_32px_-4px_rgba(30,41,59,0.04)] flex flex-col lg:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md w-full lg:w-auto">
+<div class="w-12 h-12 rounded-full bg-surface-container-high/60 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-xl">analytics</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Ringkasan Sirkulasi Hari Ini</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">38 buku sedang dipinjam • 19 buku dikembalikan tepat waktu</span>
+</div>
+</div>
+<!-- Soft Mini Sparkline / Indicator Pill Group -->
+<div class="flex items-center gap-space-sm flex-wrap w-full lg:w-auto justify-start lg:justify-end">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface font-label-sm text-label-sm shadow-xs">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>Tingkat Keterisian Rak: <strong>84%</strong></span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface font-label-sm text-label-sm shadow-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Reservasi Antrian: <strong>12</strong></span>
+</div>
+</div>
+</div>
+<!-- Main Section: Frosted Glass Panel for Buku Terbaru -->
+<section class="rounded-xl p-space-xl bg-surface-container-lowest/65 backdrop-blur-2xl shadow-[0_16px_40px_-6px_rgba(30,41,59,0.06),0_4px_16px_-2px_rgba(30,41,59,0.02)] flex flex-col gap-space-lg">
+<!-- Panel Header -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md pb-space-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Buku Terbaru</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Koleksi yang baru saja ditambahkan ke sistem inventaris perpustakaan
+          </p>
+</div>
+<a class="inline-flex items-center gap-2 px-space-md py-2 rounded-full bg-surface-container-low/80 hover:bg-surface-container text-primary font-label-lg text-label-lg transition-all shadow-xs group" href="#">
+<span>Lihat Semua Katalog</span>
+<span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<!-- Responsive Glass Table / List Shelf -->
+<div class="flex flex-col gap-3">
+<!-- Book Item 1 -->
+<div class="group rounded-lg p-space-md bg-surface-container-low/40 hover:bg-surface-container-lowest/90 backdrop-blur-lg shadow-[0_2px_8px_-2px_rgba(30,41,59,0.02)] hover:shadow-[0_8px_24px_-4px_rgba(30,41,59,0.06)] transition-all duration-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative w-14 h-18 rounded-md bg-gradient-to-tr from-primary/10 via-primary-fixed/40 to-surface-container-high flex items-center justify-center overflow-hidden shrink-0 shadow-sm transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-2xl text-primary">menu_book</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">
+                Pemrograman Python Modern
+              </span>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm truncate">
+<span>Dr. Rian Wardana</span>
+<span>•</span>
+<span class="font-label-md text-label-md text-on-surface-variant">ISBN 978-602-01</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg w-full md:w-auto justify-between md:justify-end flex-wrap">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-fixed/60 text-on-primary-fixed font-label-sm text-label-sm">
+              Teknologi
+            </span>
+<div class="flex flex-col text-left md:text-right">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Rak B-04</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hari ini, 09:30 WIB</span>
+</div>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-fixed/50 text-secondary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Tersedia
+            </span>
+<div class="flex items-center gap-1">
+<button aria-label="Lihat Detail Buku" class="p-2 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button aria-label="Pinjam Buku" class="p-2 rounded-full hover:bg-primary-fixed text-primary transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-lg">bookmark_add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Book Item 2 -->
+<div class="group rounded-lg p-space-md bg-surface-container-low/40 hover:bg-surface-container-lowest/90 backdrop-blur-lg shadow-[0_2px_8px_-2px_rgba(30,41,59,0.02)] hover:shadow-[0_8px_24px_-4px_rgba(30,41,59,0.06)] transition-all duration-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative w-14 h-18 rounded-md bg-gradient-to-tr from-secondary/10 via-secondary-fixed/40 to-surface-container-high flex items-center justify-center overflow-hidden shrink-0 shadow-sm transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-2xl text-secondary">psychology</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">
+                Filosofi Teras
+              </span>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm truncate">
+<span>Henry Manampiring</span>
+<span>•</span>
+<span class="font-label-md text-label-md text-on-surface-variant">ISBN 978-602-05</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg w-full md:w-auto justify-between md:justify-end flex-wrap">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-fixed/60 text-secondary font-label-sm text-label-sm">
+              Filsafat &amp; Psikologi
+            </span>
+<div class="flex flex-col text-left md:text-right">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Rak A-02</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Kemarin</span>
+</div>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-fixed/50 text-secondary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Tersedia
+            </span>
+<div class="flex items-center gap-1">
+<button aria-label="Lihat Detail Buku" class="p-2 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button aria-label="Pinjam Buku" class="p-2 rounded-full hover:bg-primary-fixed text-primary transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-lg">bookmark_add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Book Item 3 -->
+<div class="group rounded-lg p-space-md bg-surface-container-low/40 hover:bg-surface-container-lowest/90 backdrop-blur-lg shadow-[0_2px_8px_-2px_rgba(30,41,59,0.02)] hover:shadow-[0_8px_24px_-4px_rgba(30,41,59,0.06)] transition-all duration-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative w-14 h-18 rounded-md bg-gradient-to-tr from-surface-container-highest via-surface-container to-surface-container-low flex items-center justify-center overflow-hidden shrink-0 shadow-sm transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-2xl text-on-surface">hub</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">
+                Desain Sistem Terdistribusi
+              </span>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm truncate">
+<span>Brendan Burns</span>
+<span>•</span>
+<span class="font-label-md text-label-md text-on-surface-variant">ISBN 978-602-12</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg w-full md:w-auto justify-between md:justify-end flex-wrap">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+              Teknologi &amp; Sains
+            </span>
+<div class="flex flex-col text-left md:text-right">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Rak B-08</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 hari lalu</span>
+</div>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-fixed/50 text-secondary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Tersedia
+            </span>
+<div class="flex items-center gap-1">
+<button aria-label="Lihat Detail Buku" class="p-2 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button aria-label="Pinjam Buku" class="p-2 rounded-full hover:bg-primary-fixed text-primary transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-lg">bookmark_add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Book Item 4 -->
+<div class="group rounded-lg p-space-md bg-surface-container-low/40 hover:bg-surface-container-lowest/90 backdrop-blur-lg shadow-[0_2px_8px_-2px_rgba(30,41,59,0.02)] hover:shadow-[0_8px_24px_-4px_rgba(30,41,59,0.06)] transition-all duration-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative w-14 h-18 rounded-md bg-gradient-to-tr from-tertiary/10 via-tertiary-fixed/40 to-surface-container-high flex items-center justify-center overflow-hidden shrink-0 shadow-sm transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-2xl text-tertiary">memory</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">
+                Kecerdasan Buatan &amp; Etika
+              </span>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm truncate">
+<span>Prof. Maya Amanda</span>
+<span>•</span>
+<span class="font-label-md text-label-md text-on-surface-variant">ISBN 978-602-77</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg w-full md:w-auto justify-between md:justify-end flex-wrap">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-tertiary-fixed/60 text-tertiary font-label-sm text-label-sm">
+              Sains &amp; Etika
+            </span>
+<div class="flex flex-col text-left md:text-right">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Rak C-12</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3 hari lalu</span>
+</div>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-fixed/50 text-secondary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Tersedia
+            </span>
+<div class="flex items-center gap-1">
+<button aria-label="Lihat Detail Buku" class="p-2 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button aria-label="Pinjam Buku" class="p-2 rounded-full hover:bg-primary-fixed text-primary transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-lg">bookmark_add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Shortcuts Glass Footer Strip -->
+<div class="pt-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-base text-primary">info</span>
+<span>Data katalog disinkronkan secara langsung dengan sistem barcode &amp; RFID.</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 rounded-full bg-surface-container-low/70 hover:bg-surface-container text-on-surface transition-colors" type="button">Ekspor Laporan</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-low/70 hover:bg-surface-container text-on-surface transition-colors" type="button">Cetak Barcode</button>
+</div>
+</div>
+</section>
+</div>
+</div></main><footer class="w-full py-space-lg"><div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-md text-label-md"><span>© 2025 Sistem Informasi Perpustakaan. Hak Cipta Dilindungi.</span><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Bantuan</a><a class="hover:text-on-surface transition-colors" href="#">Kebijakan Privasi</a><a class="hover:text-on-surface transition-colors" href="#">Ketentuan Layanan</a></div></div></footer></body></html>

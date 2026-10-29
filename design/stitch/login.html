@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Sistem Perpustakaan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            primary: '#7C3AED',
+            'primary-hover': '#6D28D9',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Ambient Liquid Blurs */
+    .blob {
+      position: absolute;
+      filter: blur(85px);
+      border-radius: 9999px;
+      opacity: 0.65;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      animation: floatSlow 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatSlow {
+      0% { transform: translate(0px, 0px) scale(1); }
+      50% { transform: translate(30px, -25px) scale(1.06); }
+      100% { transform: translate(-20px, 20px) scale(0.96); }
+    }
+
+    /* Frosted Liquid Glass Card */
+    .liquid-glass-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.22) 100%);
+      backdrop-filter: blur(35px) saturate(190%);
+      -webkit-backdrop-filter: blur(35px) saturate(190%);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 
+        0 20px 50px -10px rgba(124, 58, 237, 0.12),
+        0 10px 30px -5px rgba(0, 0, 0, 0.05),
+        inset 0 1px 2px rgba(255, 255, 255, 0.9),
+        inset 1px 0 2px rgba(255, 255, 255, 0.6);
+      position: relative;
+    }
+
+    /* Subtle Rainbow Edge Reflection */
+    .liquid-glass-card::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 2rem;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(244, 114, 182, 0.2), rgba(124, 58, 237, 0.25), rgba(56, 189, 248, 0.35), rgba(255, 255, 255, 0.9));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    /* Liquid Glass Input */
+    .glass-input-wrapper {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.03),
+        0 2px 6px rgba(0, 0, 0, 0.02);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-input-wrapper:focus-within {
+      background: rgba(255, 255, 255, 0.8);
+      border-color: rgba(124, 58, 237, 0.55);
+      box-shadow: 
+        0 0 0 4px rgba(124, 58, 237, 0.15),
+        inset 0 1px 2px rgba(0, 0, 0, 0.02);
+    }
+
+    /* Error Banner Pill */
+    .glass-error-pill {
+      background: linear-gradient(135deg, rgba(254, 226, 226, 0.75) 0%, rgba(254, 202, 202, 0.5) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(248, 113, 113, 0.45);
+      box-shadow: 
+        0 4px 14px -2px rgba(239, 68, 68, 0.16),
+        inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    }
+
+    /* Primary Glossy Pill Button */
+    .glass-primary-btn {
+      background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 50%, #6D28D9 100%);
+      box-shadow: 
+        0 10px 25px -4px rgba(124, 58, 237, 0.45),
+        0 4px 10px -2px rgba(124, 58, 237, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.5),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.15);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-primary-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 
+        0 14px 28px -4px rgba(124, 58, 237, 0.55),
+        0 6px 12px -2px rgba(124, 58, 237, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.6);
+    }
+    .glass-primary-btn:active {
+      transform: translateY(1px);
+      box-shadow: 
+        0 6px 16px -2px rgba(124, 58, 237, 0.4),
+        inset 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Small Glass Floating Pill */
+    .glass-pill-badge {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#F8F9FE] text-slate-800 antialiased relative overflow-hidden flex flex-col justify-between selection:bg-purple-100 selection:text-purple-900">
+
+  <!-- Ambient Fluid Iridescent Blobs Background -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <!-- Lilac Blob -->
+    <div class="blob w-[520px] h-[520px] bg-purple-300 top-[-100px] left-[-80px]"></div>
+    <!-- Soft Pink Blob -->
+    <div class="blob w-[560px] h-[560px] bg-pink-200 top-[15%] right-[-120px]" style="animation-delay: -3s;"></div>
+    <!-- Peach Blob -->
+    <div class="blob w-[460px] h-[460px] bg-orange-100 bottom-[-80px] left-[15%]" style="animation-delay: -6s;"></div>
+    <!-- Sky Blue Blob -->
+    <div class="blob w-[500px] h-[500px] bg-sky-200 bottom-[-100px] right-[10%]" style="animation-delay: -9s;"></div>
+    <!-- Mint Fresh Blob -->
+    <div class="blob w-[400px] h-[400px] bg-emerald-100 top-[40%] left-[30%]" style="animation-delay: -12s;"></div>
+  </div>
+
+  <!-- Subtle Header / System Bar -->
+  <header class="w-full relative z-10 px-8 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <!-- Droplet Glass Logo Mark -->
+      <div class="w-10 h-10 rounded-2xl bg-white/60 backdrop-blur-md border border-white/80 shadow-sm flex items-center justify-center text-primary shadow-[0_4px_12px_rgba(124,58,237,0.12)]">
+        <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        </svg>
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="font-extrabold tracking-tight text-slate-900 text-lg">Library System</span>
+          <span class="px-2 py-0.5 text-[11px] font-bold rounded-full bg-purple-100 text-primary border border-purple-200">v2.4 Pro</span>
+        </div>
+        <p class="text-xs text-slate-500 font-medium">Sistem Informasi Perpustakaan Terpadu</p>
+      </div>
+    </div>
+
+    <!-- Quick Help & Network Status Badge -->
+    <div class="flex items-center gap-3">
+      <div class="glass-pill-badge px-3 py-1.5 rounded-full flex items-center gap-2 text-xs font-medium text-slate-600 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>Server Aktif & SIAKAD Terhubung</span>
+      </div>
+      <a href="#" class="glass-pill-badge px-3 py-1.5 rounded-full text-xs font-medium text-slate-600 hover:text-slate-900 transition flex items-center gap-1.5 shadow-sm">
+        <svg class="w-3.5 h-3.5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>Pusat Bantuan</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content: Centered Large Liquid Glass Card -->
+  <main class="relative z-10 w-full flex items-center justify-center px-4 py-8 my-auto">
+    <div class="w-full max-w-[460px] liquid-glass-card rounded-[2rem] p-8 sm:p-10">
+      
+      <!-- Top Card Header: Book Logo & Titles -->
+      <div class="text-center flex flex-col items-center">
+        <!-- Floating Droplet Book Icon -->
+        <div class="relative mb-4 group">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-purple-500/20 via-sky-300/30 to-pink-300/30 p-1 backdrop-blur-xl border border-white shadow-[0_8px_20px_rgba(124,58,237,0.18)] flex items-center justify-center">
+            <div class="w-full h-full rounded-full bg-white/70 flex items-center justify-center shadow-inner">
+              <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+          </div>
+          <!-- Tiny Decorative Gloss Glint -->
+          <div class="absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full shadow-sm border border-purple-200 flex items-center justify-center">
+            <div class="w-1.5 h-1.5 rounded-full bg-emerald-400"></div>
+          </div>
+        </div>
+
+        <h1 class="text-2xl sm:text-[26px] font-extrabold text-slate-900 tracking-tight">
+          Login Sistem Perpustakaan
+        </h1>
+        <p class="text-sm text-slate-500 font-medium mt-1">
+          Masuk untuk mengelola katalog, anggota, dan sirkulasi
+        </p>
+      </div>
+
+      <!-- Error Message Area in Soft Red Glass Pill (as requested) -->
+      <div class="mt-6 glass-error-pill rounded-full px-4 py-3 flex items-center gap-3">
+        <div class="w-6 h-6 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center shrink-0">
+          <svg class="w-3.5 h-3.5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+        </div>
+        <p class="text-xs sm:text-[13px] font-semibold text-red-700 leading-snug">
+          Password atau email yang Anda masukkan salah.
+        </p>
+      </div>
+
+      <!-- Login Form -->
+      <form class="mt-6 space-y-4" onsubmit="event.preventDefault()">
+        <!-- Email Field -->
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 ml-3" for="email">
+            Email
+          </label>
+          <div class="glass-input-wrapper rounded-full px-4 py-3 flex items-center gap-3">
+            <svg class="w-5 h-5 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <input 
+              id="email"
+              type="email" 
+              value="sinta.dewi@univ.ac.id"
+              placeholder="nama@institusi.ac.id" 
+              class="w-full bg-transparent text-sm text-slate-800 placeholder-slate-400 focus:outline-none font-medium"
+            >
+          </div>
+        </div>
+
+        <!-- Password Field -->
+        <div>
+          <div class="flex items-center justify-between mb-1.5 ml-3 mr-2">
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider" for="password">
+              Password
+            </label>
+            <a href="#" class="text-xs font-semibold text-primary hover:text-primary-hover transition">
+              Lupa Password?
+            </a>
+          </div>
+          <div class="glass-input-wrapper rounded-full px-4 py-3 flex items-center gap-3">
+            <svg class="w-5 h-5 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+            <input 
+              id="password"
+              type="password" 
+              value="••••••••••••"
+              placeholder="Masukkan password Anda" 
+              class="w-full bg-transparent text-sm text-slate-800 placeholder-slate-400 focus:outline-none font-medium tracking-wider"
+            >
+            <button type="button" class="text-slate-400 hover:text-slate-600 transition p-0.5 focus:outline-none">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Remember Me Checkbox & Role Switch -->
+        <div class="flex items-center justify-between pt-1 px-2">
+          <label class="flex items-center gap-2 cursor-pointer select-none">
+            <input type="checkbox" checked class="w-4 h-4 rounded-md text-primary border-slate-300 focus:ring-primary/40 focus:ring-2 accent-primary">
+            <span class="text-xs font-semibold text-slate-600">Ingat sesi saya (30 hari)</span>
+          </label>
+          <span class="text-xs font-medium text-slate-400 flex items-center gap-1">
+            <svg class="w-3.5 h-3.5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            SSL 256-bit
+          </span>
+        </div>
+
+        <!-- Full-Width Primary Violet "Login" Button (as requested) -->
+        <div class="pt-3">
+          <button type="submit" class="w-full glass-primary-btn rounded-full py-3.5 px-6 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer">
+            <span>Login</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+        </div>
+      </form>
+
+      <!-- Divider -->
+      <div class="relative my-6 text-center">
+        <div class="absolute inset-0 flex items-center">
+          <div class="w-full border-t border-slate-200/60"></div>
+        </div>
+        <span class="relative px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400 bg-white/40 backdrop-blur-md rounded-full py-0.5 border border-white/60">
+          Atau Masuk Melalui
+        </span>
+      </div>
+
+      <!-- Quick SSO / NFC Options -->
+      <div class="grid grid-cols-2 gap-3">
+        <button type="button" class="glass-pill-badge rounded-full py-2.5 px-4 text-xs font-semibold text-slate-700 hover:bg-white/80 transition flex items-center justify-center gap-2 shadow-sm">
+          <svg class="w-4 h-4 text-sky-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.8 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+          </svg>
+          <span>SSO Kampus</span>
+        </button>
+        <button type="button" class="glass-pill-badge rounded-full py-2.5 px-4 text-xs font-semibold text-slate-700 hover:bg-white/80 transition flex items-center justify-center gap-2 shadow-sm">
+          <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <span>Kartu NFC Staf</span>
+        </button>
+      </div>
+
+      <!-- Member Portal Notice -->
+      <div class="mt-6 text-center">
+        <p class="text-xs text-slate-500">
+          Mahasiswa atau Anggota Umum? 
+          <a href="#" class="font-bold text-primary hover:text-primary-hover transition underline decoration-primary/40 underline-offset-2 ml-0.5">
+            Akses Portal Mandiri
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Clean Floating Footer -->
+  <footer class="relative z-10 w-full px-8 py-5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
+    <div class="flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-slate-400"></span>
+      <span>© 2025 Sistem Informasi Perpustakaan. Hak Cipta Dilindungi.</span>
+    </div>
+    <div class="flex items-center gap-6 font-medium">
+      <a href="#" class="hover:text-slate-800 transition">Bantuan</a>
+      <a href="#" class="hover:text-slate-800 transition">Kebijakan Privasi</a>
+      <a href="#" class="hover:text-slate-800 transition">Ketentuan Layanan</a>
+      <a href="#" class="hover:text-slate-800 transition">Kontak Admin</a>
+    </div>
+  </footer>
+
+</body>
+</html>

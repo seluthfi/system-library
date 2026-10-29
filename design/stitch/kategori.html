@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Library System</title><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-high":"#dee8ff","on-tertiary-fixed":"#40000d","tertiary-fixed-dim":"#ffb2b7","surface-container-lowest":"#ffffff","inverse-on-surface":"#ecf1ff","on-surface":"#111c2d","secondary-fixed-dim":"#4fdbc8","on-secondary":"#ffffff","on-error":"#ffffff","tertiary":"#a0002f","secondary-fixed":"#71f8e4","surface-bright":"#f9f9ff","surface-container":"#e7eeff","surface-tint":"#732ee4","tertiary-fixed":"#ffdadb","on-primary-fixed-variant":"#5a00c6","surface-dim":"#cfdaf2","background":"#f9f9ff","on-primary-fixed":"#25005a","on-surface-variant":"#4a4455","primary-container":"#7c3aed","primary-fixed-dim":"#d2bbff","outline":"#7b7487","outline-variant":"#ccc3d8","error-container":"#ffdad6","on-tertiary-container":"#ffdedf","on-tertiary-fixed-variant":"#92002a","on-tertiary":"#ffffff","on-primary":"#ffffff","primary":"#630ed4","on-secondary-container":"#006f64","inverse-surface":"#263143","on-primary-container":"#ede0ff","error":"#ba1a1a","primary-fixed":"#eaddff","on-secondary-fixed":"#00201c","secondary":"#006b5f","surface-variant":"#d8e3fb","inverse-primary":"#d2bbff","on-background":"#111c2d","surface-container-highest":"#d8e3fb","on-error-container":"#93000a","surface-container-low":"#f0f3ff","on-secondary-fixed-variant":"#005048","surface":"#f9f9ff","secondary-container":"#6df5e1","tertiary-container":"#c81a42"},borderRadius:{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},spacing:{"space-lg":"1.5rem","margin-mobile":"1rem","space-xs":"0.25rem","gutter-mobile":"1rem","space-sm":"0.5rem","space-md":"1rem","space-xl":"2.5rem","margin":"2rem","gutter":"1.5rem"},fontFamily:{"body-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-sm":["Inter"],"display-lg":["Plus Jakarta Sans"],"label-lg":["Inter"],"headline-lg":["Plus Jakarta Sans"],"label-md":["Inter"],"body-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"]},fontSize:{"body-md":["1rem",{lineHeight:"1.5rem",letterSpacing:"0",fontWeight:"400"}],"headline-md":["1.25rem",{lineHeight:"1.75rem",letterSpacing:"-0.015em",fontWeight:"600"}],"label-sm":["0.6875rem",{lineHeight:"0.875rem",letterSpacing:"0.03em",fontWeight:"500"}],"display-lg":["3.5rem",{lineHeight:"4.25rem",letterSpacing:"-0.03em",fontWeight:"700"}],"label-lg":["0.875rem",{lineHeight:"1.25rem",letterSpacing:"0.01em",fontWeight:"600"}],"headline-lg":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.02em",fontWeight:"600"}],"label-md":["0.75rem",{lineHeight:"1rem",letterSpacing:"0.02em",fontWeight:"600"}],"body-lg":["1.125rem",{lineHeight:"1.75rem",letterSpacing:"0",fontWeight:"400"}],"display-lg-mobile":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-xl-mobile":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-xl":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.025em",fontWeight:"700"}],"headline-sm":["1.125rem",{lineHeight:"1.5rem",letterSpacing:"-0.01em",fontWeight:"600"}],"body-sm":["0.875rem",{lineHeight:"1.25rem",letterSpacing:"0.005em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen relative overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed"><div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden"><div class="absolute -top-32 -left-24 w-96 h-96 rounded-full bg-gradient-to-tr from-purple-200/40 via-pink-200/40 to-rose-100/30 blur-3xl"></div><div class="absolute top-1/4 -right-32 w-[32rem] h-[32rem] rounded-full bg-gradient-to-br from-sky-200/35 via-teal-100/30 to-indigo-100/30 blur-3xl"></div><div class="absolute -bottom-24 left-1/3 w-[28rem] h-[28rem] rounded-full bg-gradient-to-tr from-emerald-100/30 via-orange-100/25 to-purple-100/35 blur-3xl"></div></div><header class="fixed top-0 inset-x-0 z-50"><div class="h-24 max-w-7xl mx-auto px-6 flex items-center justify-between"><div class="w-full bg-surface-container-lowest/60 backdrop-blur-2xl shadow-[0_8px_32px_-4px_rgba(30,41,59,0.06),0_2px_8px_-2px_rgba(30,41,59,0.03)] rounded-full px-space-lg py-space-sm flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="Library System Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WKR-G6oOCLDErtete6G1tEG6lAoWIvGLWHsYWaR39kXGqNwxFM0-el7J0AxRmd_9Omod13M0i76-rNoGv_YHaKHWmFWWJkX0ReATwT_KwBmMjLaAArORg4qVOy2mfd5pvEaif3883qOBOWvaRpU9J4J7GAn6mqDVc59cWkr14c0Jf7lWJuVjbJxebhgqnXYTpZwjKcP8c88v16ssWb4kEwRTS-3LYQP7XRTA3YT1g"/><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Library System</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed">v2.4 Pro</span></div></div><nav class="hidden md:flex items-center gap-1 bg-surface-container-low/70 backdrop-blur-md p-1 rounded-full" data-active-classes="bg-primary-container text-on-primary-container shadow-sm"><a class="font-label-lg text-label-lg px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="dashboard" href="#">Dashboard</a><a class="font-label-lg text-label-lg px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="buku" href="#">Buku</a><a class="font-label-lg text-label-lg px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="kategori" href="#">Kategori</a><a class="font-label-lg text-label-lg px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="anggota" href="#">Anggota</a></nav><div class="flex items-center gap-space-sm"><button class="hidden lg:flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-low/80 hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-all" type="button"><span class="material-symbols-outlined text-base">search</span><span class="font-label-md text-label-md">Cari...</span><kbd class="font-label-sm text-label-sm bg-surface-container-lowest/80 px-1.5 py-0.5 rounded-full text-on-surface-variant shadow-xs">Ctrl+K</kbd></button><button aria-label="Notifikasi" class="relative p-2 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tertiary-container"></span></button><div class="hidden sm:flex items-center gap-space-xs pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClp2gPqlhVEYcU8XEOGtzon0GndrWN3JYDIxGFHts1Fw_lQdIg72I2j2EMHO8QGSEnTNC2mNiBaheH-Z7ul8UKypCu5zQbiX5xDvuR4mOCPwN_LiT1H5zyCVP5Hk2gsMKs-LxoG0v2UlK68E503BRW4BX5nSnIaryvB_tp4Y0e0OcFOW2kccNDQI0Zi3HafPDaEl9T2OSmbQziwxUHp9aXCCjRjB0XXqO7xOrdB_k"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface leading-tight">Sinta Dewi</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Pustakawan</span></div></div><a class="font-label-lg text-label-lg flex items-center gap-1 px-space-md py-1.5 rounded-full bg-surface-container-low/80 text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-all" data-path="masuk" href="#"><span class="material-symbols-outlined text-base">logout</span><span class="hidden xl:inline">Keluar</span></a></div></div></div></header><main class="w-full pt-24"><div class="flex flex-col w-full">
+<div class="max-w-7xl mx-auto w-full px-6 py-8 flex flex-col gap-8 relative">
+<!-- Ambient Luminous Specular Blobs Behind Content -->
+<div class="absolute -top-12 left-1/4 w-80 h-80 rounded-full bg-gradient-to-tr from-purple-300/30 via-indigo-200/25 to-pink-200/20 blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-96 right-10 w-96 h-96 rounded-full bg-gradient-to-bl from-teal-200/35 via-sky-200/25 to-purple-100/20 blur-3xl pointer-events-none -z-10"></div>
+<!-- Header Section with Title, Micro-Badges, and Primary CTA -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-2">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold px-3 py-1 rounded-full bg-primary-fixed/60 backdrop-blur-md">
+            Klasifikasi &amp; Rak
+          </span>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/70 backdrop-blur-xl shadow-sm text-on-surface-variant font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse"></span>
+            Total 24 Kategori
+          </div>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Kategori Buku</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          Kelola bidang klasifikasi, pemetaan rak penyimpanan, dan pantau persebaran inventaris koleksi pustaka secara real-time.
+        </p>
+</div>
+<div class="flex items-center gap-3">
+<button class="group relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-label-lg text-label-lg shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-[1.02] active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+<span>Tambah Kategori Baru</span>
+</button>
+</div>
+</div>
+<!-- Glass Search Bar & Filter Strip -->
+<div class="w-full bg-surface-container-lowest/55 backdrop-blur-2xl rounded-2xl p-3 shadow-[0_8px_32px_-4px_rgba(30,41,59,0.04),0_2px_8px_-2px_rgba(30,41,59,0.02)] flex flex-col md:flex-row items-center justify-between gap-4">
+<!-- Search Input Container -->
+<div class="relative w-full md:w-96 flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-on-surface-variant text-xl pointer-events-none">search</span>
+<input class="w-full h-11 pl-11 pr-10 rounded-full bg-surface-container-low/70 focus:bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline outline-none transition-all shadow-inner" id="categorySearch" placeholder="Cari kategori, rak, atau topik..." type="text"/>
+<button class="hidden absolute right-3 text-on-surface-variant hover:text-on-surface" id="clearSearch" type="button">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<!-- Quick Filter Pills -->
+<div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0" id="filterPills">
+<button class="filter-btn active-filter px-4 py-2 rounded-full font-label-md text-label-md transition-all bg-primary text-on-primary shadow-sm" data-filter="all" type="button">
+          Semua (24)
+        </button>
+<button class="filter-btn px-4 py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container-lowest/70 text-on-surface-variant hover:text-on-surface hover:bg-surface-container" data-filter="populer" type="button">
+          Terpopuler
+        </button>
+<button class="filter-btn px-4 py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container-lowest/70 text-on-surface-variant hover:text-on-surface hover:bg-surface-container" data-filter="baru" type="button">
+          Baru Ditambahkan
+        </button>
+<button class="filter-btn px-4 py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container-lowest/70 text-on-surface-variant hover:text-on-surface hover:bg-surface-container" data-filter="penuh" type="button">
+          Kapasitas Tinggi
+        </button>
+</div>
+</div>
+<!-- Category Bento & Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" id="categoryCardsGrid">
+<!-- 1. Pemrograman -->
+<div class="category-card group relative rounded-3xl p-6 bg-gradient-to-br from-white/70 via-purple-50/40 to-violet-100/30 backdrop-blur-2xl shadow-[0_12px_36px_-6px_rgba(99,14,212,0.08),0_2px_8px_rgba(30,41,59,0.03)] hover:shadow-[0_20px_48px_-8px_rgba(99,14,212,0.18)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+<div class="absolute -top-16 -right-16 w-44 h-44 rounded-full bg-primary/10 blur-2xl group-hover:bg-primary/20 transition-all pointer-events-none"></div>
+<div>
+<div class="flex items-start justify-between gap-4 mb-4">
+<!-- Glass droplet icon -->
+<div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-200/70 to-violet-100/90 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),0_6px_16px_rgba(99,14,212,0.12)] flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<!-- Count Pill Badge -->
+<div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary-fixed/60 text-on-primary-fixed font-label-lg text-label-lg shadow-sm">
+<span class="material-symbols-outlined text-base">menu_book</span>
+<span>482 Buku</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-1">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Pemrograman</h2>
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-4 leading-relaxed">
+            Bahasa pemrograman, arsitektur software modern, algoritma clean code, serta ekosistem web &amp; mobile dev.
+          </p>
+<!-- Shelf Location Pill -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-container/60 text-on-surface-variant font-label-md text-label-md mb-6">
+<span class="material-symbols-outlined text-base text-primary">shelves</span>
+<span>Rak B-01 s/d B-05</span>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="pt-4 flex items-center justify-between gap-2">
+<button class="flex-1 py-2 px-4 rounded-full bg-surface-container-lowest/80 hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md shadow-sm transition-all text-center flex items-center justify-center gap-1.5" type="button">
+<span>Lihat Buku</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button aria-label="Edit Kategori" class="w-9 h-9 rounded-full bg-surface-container-lowest/70 hover:bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+</div>
+</div>
+<!-- 2. Basis Data -->
+<div class="category-card group relative rounded-3xl p-6 bg-gradient-to-br from-white/70 via-teal-50/40 to-cyan-100/30 backdrop-blur-2xl shadow-[0_12px_36px_-6px_rgba(0,107,95,0.08),0_2px_8px_rgba(30,41,59,0.03)] hover:shadow-[0_20px_48px_-8px_rgba(0,107,95,0.18)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+<div class="absolute -top-16 -right-16 w-44 h-44 rounded-full bg-secondary-fixed/20 blur-2xl group-hover:bg-secondary-fixed/35 transition-all pointer-events-none"></div>
+<div>
+<div class="flex items-start justify-between gap-4 mb-4">
+<div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-teal-200/70 to-emerald-100/90 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),0_6px_16px_rgba(0,107,95,0.12)] flex items-center justify-center text-secondary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">database</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-secondary-container/60 text-on-secondary-container font-label-lg text-label-lg shadow-sm">
+<span class="material-symbols-outlined text-base">menu_book</span>
+<span>294 Buku</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-1">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Basis Data</h2>
+<span class="w-2 h-2 rounded-full bg-teal-500"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-4 leading-relaxed">
+            SQL, NoSQL, data warehousing, query profiling, dan perancangan arsitektur database terdistribusi skala tinggi.
+          </p>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-container/60 text-on-surface-variant font-label-md text-label-md mb-6">
+<span class="material-symbols-outlined text-base text-secondary">shelves</span>
+<span>Rak C-01 s/d C-03</span>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between gap-2">
+<button class="flex-1 py-2 px-4 rounded-full bg-surface-container-lowest/80 hover:bg-secondary hover:text-on-secondary text-on-surface font-label-md text-label-md shadow-sm transition-all text-center flex items-center justify-center gap-1.5" type="button">
+<span>Lihat Buku</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button aria-label="Edit Kategori" class="w-9 h-9 rounded-full bg-surface-container-lowest/70 hover:bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+</div>
+</div>
+<!-- 3. Jaringan Komputer -->
+<div class="category-card group relative rounded-3xl p-6 bg-gradient-to-br from-white/70 via-sky-50/40 to-blue-100/30 backdrop-blur-2xl shadow-[0_12px_36px_-6px_rgba(2,132,199,0.08),0_2px_8px_rgba(30,41,59,0.03)] hover:shadow-[0_20px_48px_-8px_rgba(2,132,199,0.18)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+<div class="absolute -top-16 -right-16 w-44 h-44 rounded-full bg-sky-200/30 blur-2xl group-hover:bg-sky-300/30 transition-all pointer-events-none"></div>
+<div>
+<div class="flex items-start justify-between gap-4 mb-4">
+<div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-sky-200/70 to-blue-100/90 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),0_6px_16px_rgba(2,132,199,0.12)] flex items-center justify-center text-blue-600 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-sky-100 text-sky-800 font-label-lg text-label-lg shadow-sm">
+<span class="material-symbols-outlined text-base">menu_book</span>
+<span>215 Buku</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-1">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Jaringan Komputer</h2>
+<span class="w-2 h-2 rounded-full bg-sky-500"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-4 leading-relaxed">
+            Protokol TCP/IP, keamanan cyber, infrastruktur cloud server, routing BGP, dan manajemen jaringan nirkabel.
+          </p>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-container/60 text-on-surface-variant font-label-md text-label-md mb-6">
+<span class="material-symbols-outlined text-base text-sky-600">shelves</span>
+<span>Rak D-01 s/d D-04</span>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between gap-2">
+<button class="flex-1 py-2 px-4 rounded-full bg-surface-container-lowest/80 hover:bg-sky-600 hover:text-white text-on-surface font-label-md text-label-md shadow-sm transition-all text-center flex items-center justify-center gap-1.5" type="button">
+<span>Lihat Buku</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button aria-label="Edit Kategori" class="w-9 h-9 rounded-full bg-surface-container-lowest/70 hover:bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+</div>
+</div>
+<!-- 4. Sistem Informasi -->
+<div class="category-card group relative rounded-3xl p-6 bg-gradient-to-br from-white/70 via-amber-50/40 to-orange-100/30 backdrop-blur-2xl shadow-[0_12px_36px_-6px_rgba(217,119,6,0.08),0_2px_8px_rgba(30,41,59,0.03)] hover:shadow-[0_20px_48px_-8px_rgba(217,119,6,0.18)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+<div class="absolute -top-16 -right-16 w-44 h-44 rounded-full bg-amber-200/30 blur-2xl group-hover:bg-amber-300/30 transition-all pointer-events-none"></div>
+<div>
+<div class="flex items-start justify-between gap-4 mb-4">
+<div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-200/70 to-orange-100/90 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),0_6px_16px_rgba(217,119,6,0.12)] flex items-center justify-center text-amber-700 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">corporate_fare</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-900 font-label-lg text-label-lg shadow-sm">
+<span class="material-symbols-outlined text-base">menu_book</span>
+<span>340 Buku</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-1">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Sistem Informasi</h2>
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-4 leading-relaxed">
+            Manajemen sistem TI, analisis proses bisnis, implementasi ERP perusahaan, audit tata kelola, &amp; integrasi SI.
+          </p>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-container/60 text-on-surface-variant font-label-md text-label-md mb-6">
+<span class="material-symbols-outlined text-base text-amber-700">shelves</span>
+<span>Rak E-01 s/d E-06</span>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between gap-2">
+<button class="flex-1 py-2 px-4 rounded-full bg-surface-container-lowest/80 hover:bg-amber-600 hover:text-white text-on-surface font-label-md text-label-md shadow-sm transition-all text-center flex items-center justify-center gap-1.5" type="button">
+<span>Lihat Buku</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button aria-label="Edit Kategori" class="w-9 h-9 rounded-full bg-surface-container-lowest/70 hover:bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+</div>
+</div>
+<!-- 5. Algoritma -->
+<div class="category-card group relative rounded-3xl p-6 bg-gradient-to-br from-white/70 via-rose-50/40 to-pink-100/30 backdrop-blur-2xl shadow-[0_12px_36px_-6px_rgba(200,26,66,0.08),0_2px_8px_rgba(30,41,59,0.03)] hover:shadow-[0_20px_48px_-8px_rgba(200,26,66,0.18)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+<div class="absolute -top-16 -right-16 w-44 h-44 rounded-full bg-rose-200/30 blur-2xl group-hover:bg-rose-300/30 transition-all pointer-events-none"></div>
+<div>
+<div class="flex items-start justify-between gap-4 mb-4">
+<div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-rose-200/70 to-pink-100/90 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),0_6px_16px_rgba(200,26,66,0.12)] flex items-center justify-center text-tertiary-container group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">schema</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-lg text-label-lg shadow-sm">
+<span class="material-symbols-outlined text-base">menu_book</span>
+<span>186 Buku</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-1">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Algoritma</h2>
+<span class="w-2 h-2 rounded-full bg-rose-500"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-4 leading-relaxed">
+            Struktur data tingkat lanjut, optimasi graf, komputasi numerik, rekursi, dan matematika diskrit terapan.
+          </p>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-container/60 text-on-surface-variant font-label-md text-label-md mb-6">
+<span class="material-symbols-outlined text-base text-tertiary-container">shelves</span>
+<span>Rak A-03 s/d A-06</span>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between gap-2">
+<button class="flex-1 py-2 px-4 rounded-full bg-surface-container-lowest/80 hover:bg-tertiary-container hover:text-white text-on-surface font-label-md text-label-md shadow-sm transition-all text-center flex items-center justify-center gap-1.5" type="button">
+<span>Lihat Buku</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button aria-label="Edit Kategori" class="w-9 h-9 rounded-full bg-surface-container-lowest/70 hover:bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+</div>
+</div>
+<!-- Quick Add Placeholder Glass Card (Card 6 in 3-col grid) -->
+<div class="group relative rounded-3xl p-6 bg-surface-container-lowest/40 hover:bg-surface-container-lowest/70 backdrop-blur-xl border-dashed border-2 border-outline-variant/60 hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center text-center gap-3 cursor-pointer min-h-[280px]">
+<div class="w-16 h-16 rounded-full bg-surface-container-low group-hover:bg-primary-fixed flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-all shadow-inner">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Buat Kategori Baru</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Konfigurasikan rak baru, kode Dewey, &amp; kuota koleksi
+          </p>
+</div>
+<span class="font-label-md text-label-md px-4 py-1.5 rounded-full bg-surface-container-lowest text-primary shadow-xs font-semibold">
+          Buka Formulir
+        </span>
+</div>
+</div>
+<!-- Summary Glass Panel: "Statistik Distribusi Kategori" -->
+<div class="w-full bg-surface-container-lowest/60 backdrop-blur-2xl rounded-3xl p-6 lg:p-8 shadow-[0_16px_40px_-8px_rgba(30,41,59,0.06),0_2px_8px_-2px_rgba(30,41,59,0.02)] flex flex-col lg:flex-row items-center justify-between gap-8 mt-2">
+<!-- Stats Left: Key Metrics -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-8 w-full lg:w-auto">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-purple-200/80 to-indigo-100/90 flex items-center justify-center text-primary shadow-[inset_0_1px_2px_rgba(255,255,255,0.9)]">
+<span class="material-symbols-outlined text-3xl">pie_chart</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Statistik Distribusi</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">1.517 Buku Terklasifikasi</h2>
+<span class="font-body-sm text-body-sm text-secondary font-medium">96,4% koleksi memiliki rak terdaftar</span>
+</div>
+</div>
+<div class="h-12 w-px bg-outline-variant/40 hidden sm:block"></div>
+<div class="flex items-center gap-6">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Rata-rata per Kategori</span>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">63,2 <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">Buku</span></p>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Kapasitas Rak Aktif</span>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">19 <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">Zona Rak</span></p>
+</div>
+</div>
+</div>
+<!-- Stats Center: Mini Inline SVG Visualizer -->
+<div class="hidden xl:flex items-center gap-4 bg-surface-container-low/50 px-5 py-3 rounded-2xl backdrop-blur-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-xs font-label-sm text-on-surface-variant">
+<span>Rasio Distribusi</span>
+<span class="text-primary font-bold">Top 5: 68%</span>
+</div>
+<svg class="w-48 h-3.5 rounded-full overflow-hidden" fill="none" viewbox="0 0 192 14" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#7C3AED" height="14" rx="7" width="60"></rect>
+<rect fill="#006B5F" height="14" rx="7" width="45" x="63"></rect>
+<rect fill="#0284C7" height="14" rx="7" width="35" x="111"></rect>
+<rect fill="#D97706" height="14" rx="7" width="25" x="149"></rect>
+<rect fill="#C81A42" height="14" rx="7" width="15" x="177"></rect>
+</svg>
+<div class="flex items-center gap-2 text-[10px] text-on-surface-variant font-label-sm">
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Prog</span>
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>DB</span>
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-sky-600"></span>Net</span>
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>SI</span>
+</div>
+</div>
+</div>
+<!-- Stats Right: Export & Report Trigger -->
+<div class="flex items-center gap-3 w-full lg:w-auto justify-end">
+<button class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-surface-container-lowest/90 hover:bg-surface-container text-on-surface font-label-md text-label-md shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-lg">download</span>
+<span>Unduh Laporan PDF</span>
+</button>
+<button class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-primary-fixed hover:bg-primary-fixed-dim text-on-primary-fixed font-label-md text-label-md transition-all" type="button">
+<span class="material-symbols-outlined text-lg">tune</span>
+<span>Atur Tata Letak Rak</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple Live Search and Filter Interactions
+  const searchInput = document.getElementById('categorySearch');
+  const clearBtn = document.getElementById('clearSearch');
+  const cards = document.querySelectorAll('.category-card');
+  const filterButtons = document.querySelectorAll('.filter-btn');
+
+  // Search logic
+  searchInput?.addEventListener('input', (e) => {
+    const term = e.target.value.toLowerCase().trim();
+    if (term.length > 0) {
+      clearBtn?.classList.remove('hidden');
+    } else {
+      clearBtn?.classList.add('hidden');
+    }
+
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      if (text.includes(term)) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+
+  clearBtn?.addEventListener('click', () => {
+    if (searchInput) {
+      searchInput.value = '';
+      searchInput.dispatchEvent(new Event('input'));
+      searchInput.focus();
+    }
+  });
+
+  // Filter button toggling
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        b.classList.add('bg-surface-container-lowest/70', 'text-on-surface-variant');
+      });
+      btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      btn.classList.remove('bg-surface-container-lowest/70', 'text-on-surface-variant');
+    });
+  });
+</script></main><footer class="w-full py-space-lg"><div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-md text-label-md"><span>© 2025 Sistem Informasi Perpustakaan. Hak Cipta Dilindungi.</span><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Bantuan</a><a class="hover:text-on-surface transition-colors" href="#">Kebijakan Privasi</a><a class="hover:text-on-surface transition-colors" href="#">Ketentuan Layanan</a></div></div></footer></body></html>
