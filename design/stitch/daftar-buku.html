@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Library System</title><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-background":"#111c2d","inverse-primary":"#d2bbff","surface-container-high":"#dee8ff","primary-fixed":"#eaddff","surface-container-low":"#f0f3ff","on-tertiary-fixed-variant":"#92002a","primary":"#630ed4","on-primary-fixed-variant":"#5a00c6","tertiary-container":"#c81a42","on-secondary-fixed":"#00201c","tertiary":"#a0002f","secondary":"#006b5f","surface-tint":"#732ee4","on-error":"#ffffff","on-tertiary-fixed":"#40000d","surface":"#f9f9ff","surface-container":"#e7eeff","secondary-container":"#6df5e1","on-secondary-container":"#006f64","surface-dim":"#cfdaf2","on-error-container":"#93000a","primary-container":"#7c3aed","outline-variant":"#ccc3d8","outline":"#7b7487","inverse-on-surface":"#ecf1ff","surface-container-lowest":"#ffffff","on-primary-fixed":"#25005a","tertiary-fixed-dim":"#ffb2b7","on-secondary-fixed-variant":"#005048","error-container":"#ffdad6","on-secondary":"#ffffff","surface-container-highest":"#d8e3fb","tertiary-fixed":"#ffdadb","on-surface":"#111c2d","on-tertiary-container":"#ffdedf","on-tertiary":"#ffffff","inverse-surface":"#263143","error":"#ba1a1a","on-primary":"#ffffff","on-primary-container":"#ede0ff","surface-bright":"#f9f9ff","primary-fixed-dim":"#d2bbff","surface-variant":"#d8e3fb","on-surface-variant":"#4a4455","secondary-fixed":"#71f8e4","secondary-fixed-dim":"#4fdbc8","background":"#f9f9ff"},borderRadius:{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},spacing:{"space-md":"1rem","space-lg":"1.5rem","space-xs":"0.25rem","space-xl":"2.5rem","gutter":"1.5rem","gutter-mobile":"1rem","margin-mobile":"1rem","space-sm":"0.5rem","margin":"2rem"},fontFamily:{"display-lg-mobile":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-sm":["Inter"],"body-sm":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"label-lg":["Inter"],"label-md":["Inter"],"headline-lg":["Plus Jakarta Sans"]},fontSize:{"display-lg-mobile":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["1rem",{lineHeight:"1.5rem",letterSpacing:"0",fontWeight:"400"}],"headline-xl":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.025em",fontWeight:"700"}],"display-lg":["3.5rem",{lineHeight:"4.25rem",letterSpacing:"-0.03em",fontWeight:"700"}],"headline-md":["1.25rem",{lineHeight:"1.75rem",letterSpacing:"-0.015em",fontWeight:"600"}],"label-sm":["0.6875rem",{lineHeight:"0.875rem",letterSpacing:"0.03em",fontWeight:"500"}],"body-sm":["0.875rem",{lineHeight:"1.25rem",letterSpacing:"0.005em",fontWeight:"400"}],"headline-sm":["1.125rem",{lineHeight:"1.5rem",letterSpacing:"-0.01em",fontWeight:"600"}],"body-lg":["1.125rem",{lineHeight:"1.75rem",letterSpacing:"0",fontWeight:"400"}],"headline-xl-mobile":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.02em",fontWeight:"700"}],"label-lg":["0.875rem",{lineHeight:"1.25rem",letterSpacing:"0.01em",fontWeight:"600"}],"label-md":["0.75rem",{lineHeight:"1rem",letterSpacing:"0.02em",fontWeight:"600"}],"headline-lg":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.02em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen relative overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed"><div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden"><div class="absolute -top-32 -left-24 w-96 h-96 rounded-full bg-gradient-to-tr from-purple-200/40 via-pink-200/40 to-rose-100/30 blur-3xl"></div><div class="absolute top-1/4 -right-32 w-[32rem] h-[32rem] rounded-full bg-gradient-to-br from-sky-200/35 via-teal-100/30 to-indigo-100/30 blur-3xl"></div><div class="absolute -bottom-24 left-1/3 w-[28rem] h-[28rem] rounded-full bg-gradient-to-tr from-emerald-100/30 via-orange-100/25 to-purple-100/35 blur-3xl"></div></div><header class="fixed top-0 inset-x-0 z-50"><div class="h-24 max-w-7xl mx-auto px-6 flex items-center justify-between"><div class="w-full bg-surface-container-lowest/60 backdrop-blur-2xl shadow-[0_8px_32px_-4px_rgba(30,41,59,0.06),0_2px_8px_-2px_rgba(30,41,59,0.03)] rounded-full px-space-lg py-space-sm flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="Library System Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WKR-G6oOCLDErtete6G1tEG6lAoWIvGLWHsYWaR39kXGqNwxFM0-el7J0AxRmd_9Omod13M0i76-rNoGv_YHaKHWmFWWJkX0ReATwT_KwBmMjLaAArORg4qVOy2mfd5pvEaif3883qOBOWvaRpU9J4J7GAn6mqDVc59cWkr14c0Jf7lWJuVjbJxebhgqnXYTpZwjKcP8c88v16ssWb4kEwRTS-3LYQP7XRTA3YT1g"/><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Library System</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed">v2.4 Pro</span></div></div><nav class="hidden md:flex items-center gap-1 bg-surface-container-low/70 backdrop-blur-md p-1 rounded-full" data-active-classes="bg-primary-container text-on-primary-container shadow-sm"><a class="font-label-lg text-label-lg px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="dashboard" href="#">Dashboard</a><a class="font-label-lg text-label-lg px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="buku" href="#">Buku</a><a class="font-label-lg text-label-lg px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="kategori" href="#">Kategori</a><a class="font-label-lg text-label-lg px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="anggota" href="#">Anggota</a></nav><div class="flex items-center gap-space-sm"><button class="hidden lg:flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-low/80 hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-all" type="button"><span class="material-symbols-outlined text-base">search</span><span class="font-label-md text-label-md">Cari...</span><kbd class="font-label-sm text-label-sm bg-surface-container-lowest/80 px-1.5 py-0.5 rounded-full text-on-surface-variant shadow-xs">Ctrl+K</kbd></button><button aria-label="Notifikasi" class="relative p-2 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tertiary-container"></span></button><div class="hidden sm:flex items-center gap-space-xs pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClp2gPqlhVEYcU8XEOGtzon0GndrWN3JYDIxGFHts1Fw_lQdIg72I2j2EMHO8QGSEnTNC2mNiBaheH-Z7ul8UKypCu5zQbiX5xDvuR4mOCPwN_LiT1H5zyCVP5Hk2gsMKs-LxoG0v2UlK68E503BRW4BX5nSnIaryvB_tp4Y0e0OcFOW2kccNDQI0Zi3HafPDaEl9T2OSmbQziwxUHp9aXCCjRjB0XXqO7xOrdB_k"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface leading-tight">Sinta Dewi</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Pustakawan</span></div></div><a class="font-label-lg text-label-lg flex items-center gap-1 px-space-md py-1.5 rounded-full bg-surface-container-low/80 text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-all" data-path="masuk" href="#"><span class="material-symbols-outlined text-base">logout</span><span class="hidden xl:inline">Keluar</span></a></div></div></div></header><main class="w-full pt-24"><div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto px-6 py-space-md flex flex-col gap-space-lg relative">
+<!-- FLOATING TOAST NOTIFICATION -->
+<div class="fixed top-28 right-6 md:right-12 z-40 flex items-center gap-space-sm pl-space-md pr-space-sm py-2 rounded-full bg-surface-container-lowest/80 backdrop-blur-2xl shadow-[0_16px_40px_-6px_rgba(30,41,59,0.12),0_4px_12px_-2px_rgba(30,41,59,0.06),inset_0_1px_1px_0_rgba(255,255,255,0.9)] transition-all duration-300" id="toast-success">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed/40 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">Data Buku Berhasil Ditambahkan</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">ISBN &amp; nomor rak telah tercatat otomatis.</span>
+</div>
+<button aria-label="Tutup notifikasi" class="ml-2 w-6 h-6 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" onclick="document.getElementById('toast-success').classList.add('opacity-0', 'pointer-events-none')" type="button">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<!-- HEADER TITLE & STATS OVERVIEW -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md pt-2">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-display-lg text-headline-xl lg:text-display-lg text-on-surface tracking-tight">Daftar Buku</h1>
+<div class="flex items-center gap-1.5 px-space-md py-1 rounded-full bg-surface-container-low/80 backdrop-blur-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.8)]">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-label-md text-primary font-semibold">Total 1.482 Judul</span>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+          Kelola koleksi buku perpustakaan, status stok fisik, dan kategori referensi dengan pantauan rak berkala.
+        </p>
+</div>
+<!-- Action Button Group -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="group flex items-center gap-2 px-space-lg py-3 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-[0_8px_24px_rgba(124,58,237,0.35),inset_0_1px_1px_rgba(255,255,255,0.4)] hover:shadow-[0_12px_28px_rgba(124,58,237,0.5)] hover:scale-[1.02] active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-lg transition-transform group-hover:rotate-90">add</span>
+<span>Tambah Buku Baru</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-3 rounded-full bg-surface-container-lowest/70 backdrop-blur-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest shadow-[0_4px_16px_rgba(30,41,59,0.04),inset_0_1px_1px_rgba(255,255,255,0.8)] transition-all font-label-lg text-label-lg" type="button">
+<span class="material-symbols-outlined text-lg">file_download</span>
+<span class="hidden sm:inline">Ekspor Data</span>
+</button>
+</div>
+</div>
+<!-- ACTION BAR & GLASS SEARCH + CATEGORY FILTER -->
+<div class="flex flex-col gap-space-md p-space-md rounded-lg bg-surface-container-lowest/50 backdrop-blur-2xl shadow-[0_16px_36px_-6px_rgba(30,41,59,0.05),inset_0_1px_2px_rgba(255,255,255,0.9)]">
+<!-- Upper Search Row & Stock Dropdown -->
+<div class="flex flex-col md:flex-row items-center gap-space-md w-full">
+<!-- Search Input with Glass Pill -->
+<div class="relative flex-1 w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl">search</span>
+<input class="w-full h-12 pl-12 pr-12 rounded-full bg-surface-container-lowest/60 backdrop-blur-md text-on-surface font-body-md text-body-md placeholder:text-on-surface-variant/70 shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)] focus:bg-surface-container-lowest focus:outline-none focus:shadow-[0_0_0_4px_rgba(124,58,237,0.15)] transition-all" placeholder="Cari buku berdasarkan judul, pengarang, atau ISBN..." type="text"/>
+<button class="absolute right-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface w-6 h-6 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">cancel</span>
+</button>
+</div>
+<!-- Quick Status Filter Segment -->
+<div class="flex items-center gap-1 p-1 rounded-full bg-surface-container-low/80 backdrop-blur-md w-full md:w-auto overflow-x-auto">
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest text-primary shadow-[0_2px_6px_rgba(0,0,0,0.05)] transition-all whitespace-nowrap" type="button">
+            Semua Stok
+          </button>
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all whitespace-nowrap" type="button">
+            Tersedia (1.240)
+          </button>
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all whitespace-nowrap" type="button">
+            Stok Menipis / Habis (242)
+          </button>
+</div>
+</div>
+<!-- Categories Pills Row -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 scrollbar-none">
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md bg-primary-container text-on-primary shadow-[0_4px_12px_rgba(124,58,237,0.25)] transition-all whitespace-nowrap" type="button">
+          Semua Kategori
+        </button>
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest/60 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest shadow-[inset_0_1px_1px_rgba(255,255,255,0.7)] transition-all whitespace-nowrap" type="button">
+          Teknologi
+        </button>
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest/60 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest shadow-[inset_0_1px_1px_rgba(255,255,255,0.7)] transition-all whitespace-nowrap" type="button">
+          Filsafat &amp; Psikologi
+        </button>
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest/60 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest shadow-[inset_0_1px_1px_rgba(255,255,255,0.7)] transition-all whitespace-nowrap" type="button">
+          Sains &amp; Komputer
+        </button>
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest/60 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest shadow-[inset_0_1px_1px_rgba(255,255,255,0.7)] transition-all whitespace-nowrap" type="button">
+          Sastra &amp; Bahasa
+        </button>
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest/60 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest shadow-[inset_0_1px_1px_rgba(255,255,255,0.7)] transition-all whitespace-nowrap" type="button">
+          Ekonomi &amp; Bisnis
+        </button>
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest/60 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest shadow-[inset_0_1px_1px_rgba(255,255,255,0.7)] transition-all whitespace-nowrap" type="button">
+          Tanpa Kategori
+        </button>
+</div>
+</div>
+<!-- BOOK CARDS RESPONSIVE GRID -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg w-full">
+<!-- CARD 1: Pemrograman Python Modern (Tersedia - 12 Eks) -->
+<div class="group flex flex-col justify-between p-space-lg rounded-[28px] bg-surface-container-lowest/55 backdrop-blur-2xl shadow-[0_12px_32px_-4px_rgba(30,41,59,0.06),0_2px_8px_-2px_rgba(30,41,59,0.03),inset_0_1px_2px_rgba(255,255,255,0.85)] hover:shadow-[0_20px_48px_-6px_rgba(124,58,237,0.14),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300">
+<div class="flex flex-col gap-space-md">
+<!-- Cover Mockup with Badges -->
+<div class="relative w-full h-48 rounded-2xl overflow-hidden bg-gradient-to-tr from-purple-100 via-indigo-50 to-blue-100 shadow-[inset_0_2px_6px_rgba(255,255,255,0.6)] flex items-center justify-center p-space-sm group-hover:scale-[1.01] transition-transform">
+<img class="w-28 h-40 object-cover rounded-lg shadow-[0_10px_20px_-4px_rgba(30,41,59,0.25)] group-hover:-translate-y-1 transition-transform duration-300" data-alt="Modern technical book cover with minimalist typography and abstract 3D iridescent violet shapes, clean Apple aesthetic studio lighting, high resolution, sharp focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI0Qr-XCH_Ru7Jr168H1Ic7Hzj1arzgU6lWAq-BbQfsTH6xfURJwAlDKSbCTnSKqeoldCG2DLQxaIiTXpXG2kmgrK5tEVAVlOfG4TvzQUAmj3x2YsrCplOytbvNHeEVmHoDdWTReSctPqzxEhuDChIkUm3aWzK9o8QcCzy2NlCvgrTz4pgk-rUleajEPbPMr3O3M7fxzzLwEMOfJC-SPpp8NCO6FDi_0iyoXhctUo"/>
+<!-- Stock Pill Badge -->
+<div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-secondary-fixed/90 backdrop-blur-md text-on-secondary-fixed font-label-sm text-label-sm shadow-[0_2px_8px_rgba(0,107,95,0.15)] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Stok: 12 Eks.</span>
+</div>
+<!-- Location Badge -->
+<div class="absolute bottom-3 left-3 px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-sm text-label-sm shadow-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">shelves</span>
+<span>Rak B-04</span>
+</div>
+</div>
+<!-- Metadata & Title -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed/60 text-primary font-label-sm text-label-sm font-semibold">
+                Teknologi
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug line-clamp-2">
+              Pemrograman Python Modern &amp; Clean Architecture
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Dr. Rian Wardana • 2024
+            </p>
+<div class="flex items-center gap-2 pt-1 font-label-sm text-label-sm text-on-surface-variant/80">
+<span class="material-symbols-outlined text-xs">barcode</span>
+<span>978-623-01-2948-1</span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center justify-between gap-1.5 pt-space-md mt-space-md border-t-0 bg-surface-container-low/40 p-2 rounded-2xl backdrop-blur-md">
+<button class="flex-1 py-1.5 px-2 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md text-center transition-all shadow-xs flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span>Detail</span>
+</button>
+<button class="py-1.5 px-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed font-label-md text-label-md transition-all shadow-xs flex items-center justify-center gap-1" title="Sunting Buku" type="button">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span class="hidden sm:inline">Edit</span>
+</button>
+<button class="py-1.5 px-2.5 rounded-full bg-surface-container-lowest/60 hover:bg-error-container text-error transition-all flex items-center justify-center" title="Hapus Buku" type="button">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+</div>
+<!-- CARD 2: Filosofi Teras (Stok Menipis - 2 Eks) -->
+<div class="group flex flex-col justify-between p-space-lg rounded-[28px] bg-surface-container-lowest/55 backdrop-blur-2xl shadow-[0_12px_32px_-4px_rgba(30,41,59,0.06),0_2px_8px_-2px_rgba(30,41,59,0.03),inset_0_1px_2px_rgba(255,255,255,0.85)] hover:shadow-[0_20px_48px_-6px_rgba(124,58,237,0.14),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300">
+<div class="flex flex-col gap-space-md">
+<!-- Cover Mockup -->
+<div class="relative w-full h-48 rounded-2xl overflow-hidden bg-gradient-to-tr from-amber-100 via-rose-50 to-orange-100 shadow-[inset_0_2px_6px_rgba(255,255,255,0.6)] flex items-center justify-center p-space-sm group-hover:scale-[1.01] transition-transform">
+<img class="w-28 h-40 object-cover rounded-lg shadow-[0_10px_20px_-4px_rgba(30,41,59,0.25)] group-hover:-translate-y-1 transition-transform duration-300" data-alt="Editorial book cover titled Filosofi Teras featuring soothing muted earth tones, minimalist Greek marble sculpture graphic, soft ambient lighting, clean modern layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBpJuPDya613aCur624oU98QoxwcDn77kB4j6gGBmUhQqjLxZ5kACuDkH0SZGhLS2GWiX7iIGRT6mUl4rAqulOdZKNCfsgkvA0hNapL9MrGcizEWre2ES_ty-1ad3ZTuNHoG7HKUsXMw82rXYdXPhrU5PFY2RW8SOJtc9PgP81Kj5xGnPuHliWoho92kmtSpCLhFmXoFCjLGShnzWeLaymf9AfxPBqzDef9o8CPoI"/>
+<!-- Stock Pill Badge Warning -->
+<div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-amber-100/90 backdrop-blur-md text-amber-800 font-label-sm text-label-sm shadow-[0_2px_8px_rgba(245,158,11,0.15)] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+<span>Stok: 2 Eks.</span>
+</div>
+<!-- Location Badge -->
+<div class="absolute bottom-3 left-3 px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-sm text-label-sm shadow-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">shelves</span>
+<span>Rak F-02</span>
+</div>
+</div>
+<!-- Metadata & Title -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-variant text-on-surface-variant font-label-sm text-label-sm font-semibold">
+                Filsafat &amp; Psikologi
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug line-clamp-2">
+              Filosofi Teras: Mental Tangguh Masa Kini
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Henry Manampiring • 2019
+            </p>
+<div class="flex items-center gap-2 pt-1 font-label-sm text-label-sm text-on-surface-variant/80">
+<span class="material-symbols-outlined text-xs">barcode</span>
+<span>978-602-41-2518-9</span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center justify-between gap-1.5 pt-space-md mt-space-md border-t-0 bg-surface-container-low/40 p-2 rounded-2xl backdrop-blur-md">
+<button class="flex-1 py-1.5 px-2 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md text-center transition-all shadow-xs flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span>Detail</span>
+</button>
+<button class="py-1.5 px-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed font-label-md text-label-md transition-all shadow-xs flex items-center justify-center gap-1" title="Sunting Buku" type="button">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span class="hidden sm:inline">Edit</span>
+</button>
+<button class="py-1.5 px-2.5 rounded-full bg-surface-container-lowest/60 hover:bg-error-container text-error transition-all flex items-center justify-center" title="Hapus Buku" type="button">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+</div>
+<!-- CARD 3: Desain Sistem Terdistribusi (Habis / 0) -->
+<div class="group flex flex-col justify-between p-space-lg rounded-[28px] bg-surface-container-lowest/55 backdrop-blur-2xl shadow-[0_12px_32px_-4px_rgba(30,41,59,0.06),0_2px_8px_-2px_rgba(30,41,59,0.03),inset_0_1px_2px_rgba(255,255,255,0.85)] hover:shadow-[0_20px_48px_-6px_rgba(124,58,237,0.14),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300">
+<div class="flex flex-col gap-space-md">
+<!-- Cover Mockup -->
+<div class="relative w-full h-48 rounded-2xl overflow-hidden bg-gradient-to-tr from-rose-100 via-pink-50 to-purple-100 shadow-[inset_0_2px_6px_rgba(255,255,255,0.6)] flex items-center justify-center p-space-sm group-hover:scale-[1.01] transition-transform">
+<img class="w-28 h-40 object-cover rounded-lg shadow-[0_10px_20px_-4px_rgba(30,41,59,0.25)] group-hover:-translate-y-1 transition-transform duration-300 opacity-90" data-alt="Conceptual tech book cover showing distributed cloud nodes network interconnected with luminous glass nodes, modern clean layout, soft purple blue tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADKAxSTngavEJ7oflMkDSW8q3fAgSp48DxmOCRjdgbMSK428eSsNUPJvJDAZOd3IKv62ylmnnll8G2p8DawmmIvs2_neEShBEgk9YE0cxhmwi_bGFj3JANDltxqeswBIVa0M3Uy7F4WSeUYg1GvyzIsdVAVKU-nD7Wkwwaz9dm1o-rQJMkrrhO_5IDv7BZ6wwvPanNARKUs8eKWCv7wbE0buhW9SeJaLIIceuO6Ko"/>
+<!-- Stock Pill Badge Habis -->
+<div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-tertiary-fixed/90 backdrop-blur-md text-tertiary font-label-sm text-label-sm shadow-[0_2px_8px_rgba(160,0,47,0.15)] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>Habis (0)</span>
+</div>
+<!-- Location Badge -->
+<div class="absolute bottom-3 left-3 px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-sm text-label-sm shadow-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">shelves</span>
+<span>Rak C-11</span>
+</div>
+</div>
+<!-- Metadata & Title -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed/60 text-primary font-label-sm text-label-sm font-semibold">
+                Teknologi
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug line-clamp-2">
+              Desain Sistem Terdistribusi Skala Global
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Brendan Burns &amp; Team • 2022
+            </p>
+<div class="flex items-center gap-2 pt-1 font-label-sm text-label-sm text-on-surface-variant/80">
+<span class="material-symbols-outlined text-xs">barcode</span>
+<span>978-149-19-2492-1</span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center justify-between gap-1.5 pt-space-md mt-space-md border-t-0 bg-surface-container-low/40 p-2 rounded-2xl backdrop-blur-md">
+<button class="flex-1 py-1.5 px-2 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md text-center transition-all shadow-xs flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span>Detail</span>
+</button>
+<button class="py-1.5 px-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed font-label-md text-label-md transition-all shadow-xs flex items-center justify-center gap-1" title="Sunting Buku" type="button">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span class="hidden sm:inline">Edit</span>
+</button>
+<button class="py-1.5 px-2.5 rounded-full bg-surface-container-lowest/60 hover:bg-error-container text-error transition-all flex items-center justify-center" title="Hapus Buku" type="button">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+</div>
+<!-- CARD 4: Kecerdasan Buatan & Etika (Tersedia - 8 Eks) -->
+<div class="group flex flex-col justify-between p-space-lg rounded-[28px] bg-surface-container-lowest/55 backdrop-blur-2xl shadow-[0_12px_32px_-4px_rgba(30,41,59,0.06),0_2px_8px_-2px_rgba(30,41,59,0.03),inset_0_1px_2px_rgba(255,255,255,0.85)] hover:shadow-[0_20px_48px_-6px_rgba(124,58,237,0.14),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300">
+<div class="flex flex-col gap-space-md">
+<!-- Cover Mockup -->
+<div class="relative w-full h-48 rounded-2xl overflow-hidden bg-gradient-to-tr from-teal-100 via-sky-50 to-indigo-100 shadow-[inset_0_2px_6px_rgba(255,255,255,0.6)] flex items-center justify-center p-space-sm group-hover:scale-[1.01] transition-transform">
+<img class="w-28 h-40 object-cover rounded-lg shadow-[0_10px_20px_-4px_rgba(30,41,59,0.25)] group-hover:-translate-y-1 transition-transform duration-300" data-alt="Editorial book cover titled Kecerdasan Buatan dan Etika, showcasing an iridescent geometric brain structure in calm mint and lavender hues, soft translucent background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7k76wi4FeZMw0EmoQm2f4qYtoQsNtCAnsAvGc5NDNyIF2BELgz_KaNPFrwssupvOuMM_OPEZxwA6EdDn2x03Ecw-3LKczcgzArq_HHodUwZDw6i_PWX1bwuEjy1JhziEZuKxxTqITXAIcd8GlqOgDwYq0LBrePrPmDZUZbKzDq11cjf5RrU6h91LLOP3p1vbYm30DjEhsDbNR0kpppXaUpWnboOPfgVB_Sg7YE7c"/>
+<!-- Stock Pill Badge -->
+<div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-secondary-fixed/90 backdrop-blur-md text-on-secondary-fixed font-label-sm text-label-sm shadow-[0_2px_8px_rgba(0,107,95,0.15)] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Stok: 8 Eks.</span>
+</div>
+<!-- Location Badge -->
+<div class="absolute bottom-3 left-3 px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-sm text-label-sm shadow-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">shelves</span>
+<span>Rak A-01</span>
+</div>
+</div>
+<!-- Metadata & Title -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed/60 text-secondary font-label-sm text-label-sm font-semibold">
+                Sains &amp; Komputer
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug line-clamp-2">
+              Kecerdasan Buatan, Algoritma &amp; Etika Moral
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Prof. Maya Amanda • 2023
+            </p>
+<div class="flex items-center gap-2 pt-1 font-label-sm text-label-sm text-on-surface-variant/80">
+<span class="material-symbols-outlined text-xs">barcode</span>
+<span>978-623-77-8812-4</span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center justify-between gap-1.5 pt-space-md mt-space-md border-t-0 bg-surface-container-low/40 p-2 rounded-2xl backdrop-blur-md">
+<button class="flex-1 py-1.5 px-2 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md text-center transition-all shadow-xs flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span>Detail</span>
+</button>
+<button class="py-1.5 px-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed font-label-md text-label-md transition-all shadow-xs flex items-center justify-center gap-1" title="Sunting Buku" type="button">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span class="hidden sm:inline">Edit</span>
+</button>
+<button class="py-1.5 px-2.5 rounded-full bg-surface-container-lowest/60 hover:bg-error-container text-error transition-all flex items-center justify-center" title="Hapus Buku" type="button">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+</div>
+<!-- CARD 5: Metodologi Riset Kualitatif (Tersedia - 15 Eks) -->
+<div class="group flex flex-col justify-between p-space-lg rounded-[28px] bg-surface-container-lowest/55 backdrop-blur-2xl shadow-[0_12px_32px_-4px_rgba(30,41,59,0.06),0_2px_8px_-2px_rgba(30,41,59,0.03),inset_0_1px_2px_rgba(255,255,255,0.85)] hover:shadow-[0_20px_48px_-6px_rgba(124,58,237,0.14),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300">
+<div class="flex flex-col gap-space-md">
+<!-- Cover Mockup -->
+<div class="relative w-full h-48 rounded-2xl overflow-hidden bg-gradient-to-tr from-sky-100 via-indigo-50 to-purple-100 shadow-[inset_0_2px_6px_rgba(255,255,255,0.6)] flex items-center justify-center p-space-sm group-hover:scale-[1.01] transition-transform">
+<img class="w-28 h-40 object-cover rounded-lg shadow-[0_10px_20px_-4px_rgba(30,41,59,0.25)] group-hover:-translate-y-1 transition-transform duration-300" data-alt="Academic research textbook cover in minimalist Scandinavian design, delicate typography, pale violet and slate color scheme, studio soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmzbsR_sobaRxn8kHKRzd_PiD5TlcHjQ_gW8HatnI1YuHpTpJaSpqyApzt5D9WlixPlIcoOLzHD2lSJInxr4VWNW56LCk0-IwF67YnxYoYIkv_TyGyR9pPfI1_pFChaPgds1igtCawxB0n61xkdeKiiUwkba-aMSpH9HeKTflJhY9tlW08I1qpKCeXPDGlwcc-DvUj0E0dolRXUzYcRpDdiB--jMaja5yjKS-aJXA"/>
+<!-- Stock Pill Badge -->
+<div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-secondary-fixed/90 backdrop-blur-md text-on-secondary-fixed font-label-sm text-label-sm shadow-[0_2px_8px_rgba(0,107,95,0.15)] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Stok: 15 Eks.</span>
+</div>
+<!-- Location Badge -->
+<div class="absolute bottom-3 left-3 px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-sm text-label-sm shadow-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">shelves</span>
+<span>Rak E-07</span>
+</div>
+</div>
+<!-- Metadata & Title -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-variant text-on-surface-variant font-label-sm text-label-sm font-semibold">
+                Sains &amp; Pendidikan
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug line-clamp-2">
+              Metodologi Riset Kualitatif Kontemporer
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Dr. H. Sugiyono • 2021
+            </p>
+<div class="flex items-center gap-2 pt-1 font-label-sm text-label-sm text-on-surface-variant/80">
+<span class="material-symbols-outlined text-xs">barcode</span>
+<span>978-602-86-5012-3</span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center justify-between gap-1.5 pt-space-md mt-space-md border-t-0 bg-surface-container-low/40 p-2 rounded-2xl backdrop-blur-md">
+<button class="flex-1 py-1.5 px-2 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md text-center transition-all shadow-xs flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span>Detail</span>
+</button>
+<button class="py-1.5 px-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed font-label-md text-label-md transition-all shadow-xs flex items-center justify-center gap-1" title="Sunting Buku" type="button">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span class="hidden sm:inline">Edit</span>
+</button>
+<button class="py-1.5 px-2.5 rounded-full bg-surface-container-lowest/60 hover:bg-error-container text-error transition-all flex items-center justify-center" title="Hapus Buku" type="button">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+</div>
+<!-- CARD 6: Belum Ada Kategori (Explicit Uncategorized Showcase) -->
+<div class="group flex flex-col justify-between p-space-lg rounded-[28px] bg-surface-container-lowest/55 backdrop-blur-2xl shadow-[0_12px_32px_-4px_rgba(30,41,59,0.06),0_2px_8px_-2px_rgba(30,41,59,0.03),inset_0_1px_2px_rgba(255,255,255,0.85)] hover:shadow-[0_20px_48px_-6px_rgba(124,58,237,0.14),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300">
+<div class="flex flex-col gap-space-md">
+<!-- Cover Mockup -->
+<div class="relative w-full h-48 rounded-2xl overflow-hidden bg-gradient-to-tr from-slate-100 via-gray-50 to-zinc-200 shadow-[inset_0_2px_6px_rgba(255,255,255,0.6)] flex items-center justify-center p-space-sm group-hover:scale-[1.01] transition-transform">
+<img class="w-28 h-40 object-cover rounded-lg shadow-[0_10px_20px_-4px_rgba(30,41,59,0.25)] group-hover:-translate-y-1 transition-transform duration-300" data-alt="Monochrome minimalist manuscript draft cover with question mark symbol, translucent glass reflections, neutral gray aesthetic background, studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_opN9tfWBVtFEHSzznDfU_3UWMtR_aq86Gw3bRaSA6CCSGf6hGAvVhT9gM4xMy2kNQF1xPpgYSmNbLKvEyOWviKekYS5LEaVZWJBxZ-LzTuscLCGkwLCwrHU-RE_D_7C156Af_7wMp9p2Owypy2y_qdjki1jzme2qcEuExwOE9CuFRaVFGsZZCZUmiYKOuD9RJRbBa6s4upAa4H5s22FPKRrAAobXEMIiDYQIOPc"/>
+<!-- Stock Pill Badge -->
+<div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-secondary-fixed/90 backdrop-blur-md text-on-secondary-fixed font-label-sm text-label-sm shadow-[0_2px_8px_rgba(0,107,95,0.15)] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Stok: 5 Eks.</span>
+</div>
+<!-- Location Badge -->
+<div class="absolute bottom-3 left-3 px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-sm text-label-sm shadow-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">shelves</span>
+<span>Karantina K-01</span>
+</div>
+</div>
+<!-- Metadata & Title -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm italic">
+                Belum ada kategori
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug line-clamp-2">
+              Kompilasi Naskah Sejarah Lokal Nusantara
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Penyusun Anonim • 2024
+            </p>
+<div class="flex items-center gap-2 pt-1 font-label-sm text-label-sm text-on-surface-variant/80">
+<span class="material-symbols-outlined text-xs">barcode</span>
+<span>978-000-00-0000-0</span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center justify-between gap-1.5 pt-space-md mt-space-md border-t-0 bg-surface-container-low/40 p-2 rounded-2xl backdrop-blur-md">
+<button class="flex-1 py-1.5 px-2 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md text-center transition-all shadow-xs flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span>Detail</span>
+</button>
+<button class="py-1.5 px-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed font-label-md text-label-md transition-all shadow-xs flex items-center justify-center gap-1" title="Sunting Buku" type="button">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span class="hidden sm:inline">Edit</span>
+</button>
+<button class="py-1.5 px-2.5 rounded-full bg-surface-container-lowest/60 hover:bg-error-container text-error transition-all flex items-center justify-center" title="Hapus Buku" type="button">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+</div>
+<!-- CARD 7: Arsitektur Cloud & DevOps (Tersedia - 6 Eks) -->
+<div class="group flex flex-col justify-between p-space-lg rounded-[28px] bg-surface-container-lowest/55 backdrop-blur-2xl shadow-[0_12px_32px_-4px_rgba(30,41,59,0.06),0_2px_8px_-2px_rgba(30,41,59,0.03),inset_0_1px_2px_rgba(255,255,255,0.85)] hover:shadow-[0_20px_48px_-6px_rgba(124,58,237,0.14),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300">
+<div class="flex flex-col gap-space-md">
+<!-- Cover Mockup -->
+<div class="relative w-full h-48 rounded-2xl overflow-hidden bg-gradient-to-tr from-indigo-100 via-sky-50 to-teal-100 shadow-[inset_0_2px_6px_rgba(255,255,255,0.6)] flex items-center justify-center p-space-sm group-hover:scale-[1.01] transition-transform">
+<img class="w-28 h-40 object-cover rounded-lg shadow-[0_10px_20px_-4px_rgba(30,41,59,0.25)] group-hover:-translate-y-1 transition-transform duration-300" data-alt="Cloud architecture textbook cover illustration showing 3D crystal geometric layers floating over cybernetic patterns, Apple liquid glass design, cyan and violet tints" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwMspTzDpciS4zuZYEAe5fUWhq6EeGaPkkX0P-wkNsEmNOk-7P5z_JXOMXm7lWTJpnMOZJH729RlD9nuKcMXnIvBd6y60YF9Z6IpP46wRo5WKxkia6ZJe8W1UOMRU9h3vxszuyJxLRhqWDFwB0k_lpjmd4alWf3GG7Zp0yBgt3FObALMVKNPAeexZDrR6wn7AgMVdGsOCdG8qe3HKy6Cs8hwesO8Kr7DxAwuZ95yE"/>
+<!-- Stock Pill Badge -->
+<div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-secondary-fixed/90 backdrop-blur-md text-on-secondary-fixed font-label-sm text-label-sm shadow-[0_2px_8px_rgba(0,107,95,0.15)] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Stok: 6 Eks.</span>
+</div>
+<!-- Location Badge -->
+<div class="absolute bottom-3 left-3 px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-sm text-label-sm shadow-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">shelves</span>
+<span>Rak B-12</span>
+</div>
+</div>
+<!-- Metadata & Title -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed/60 text-primary font-label-sm text-label-sm font-semibold">
+                Teknologi
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug line-clamp-2">
+              Arsitektur Cloud Native &amp; Ekosistem DevOps
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Teguh Pratama, M.Kom • 2023
+            </p>
+<div class="flex items-center gap-2 pt-1 font-label-sm text-label-sm text-on-surface-variant/80">
+<span class="material-symbols-outlined text-xs">barcode</span>
+<span>978-623-14-0012-7</span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center justify-between gap-1.5 pt-space-md mt-space-md border-t-0 bg-surface-container-low/40 p-2 rounded-2xl backdrop-blur-md">
+<button class="flex-1 py-1.5 px-2 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md text-center transition-all shadow-xs flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span>Detail</span>
+</button>
+<button class="py-1.5 px-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed font-label-md text-label-md transition-all shadow-xs flex items-center justify-center gap-1" title="Sunting Buku" type="button">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span class="hidden sm:inline">Edit</span>
+</button>
+<button class="py-1.5 px-2.5 rounded-full bg-surface-container-lowest/60 hover:bg-error-container text-error transition-all flex items-center justify-center" title="Hapus Buku" type="button">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+</div>
+<!-- CARD 8: Ekonomi Digital & Keuangan (Tersedia - 9 Eks) -->
+<div class="group flex flex-col justify-between p-space-lg rounded-[28px] bg-surface-container-lowest/55 backdrop-blur-2xl shadow-[0_12px_32px_-4px_rgba(30,41,59,0.06),0_2px_8px_-2px_rgba(30,41,59,0.03),inset_0_1px_2px_rgba(255,255,255,0.85)] hover:shadow-[0_20px_48px_-6px_rgba(124,58,237,0.14),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300">
+<div class="flex flex-col gap-space-md">
+<!-- Cover Mockup -->
+<div class="relative w-full h-48 rounded-2xl overflow-hidden bg-gradient-to-tr from-emerald-100 via-teal-50 to-amber-100 shadow-[inset_0_2px_6px_rgba(255,255,255,0.6)] flex items-center justify-center p-space-sm group-hover:scale-[1.01] transition-transform">
+<img class="w-28 h-40 object-cover rounded-lg shadow-[0_10px_20px_-4px_rgba(30,41,59,0.25)] group-hover:-translate-y-1 transition-transform duration-300" data-alt="Finance and economics book cover showing polished glass coin structures with rising golden chart curves, minimalist clean white background, photorealistic rendering" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvSXuUSKC6hSkrb0w2ElM8UDtRYq8ZQdgMBwR1AnOew7PUFHops2f2BzoGEiPWyhtF6d0N_9_PXcBXYkgXWsRmGC74cYftUeSsxAYW4C-0isSZennEGS1xNyC_2XizbOpf9YFtLON69absdTAu_nRwarNPFkAQ_j_ZkWmiwdNlbuuVZHexeXLu1SNRAflzmDGoXT1tj3Nx8pSFdZtYsOTl2Y2fQfr1D7YhNBGmYpQ"/>
+<!-- Stock Pill Badge -->
+<div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-secondary-fixed/90 backdrop-blur-md text-on-secondary-fixed font-label-sm text-label-sm shadow-[0_2px_8px_rgba(0,107,95,0.15)] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Stok: 9 Eks.</span>
+</div>
+<!-- Location Badge -->
+<div class="absolute bottom-3 left-3 px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-sm text-label-sm shadow-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">shelves</span>
+<span>Rak D-05</span>
+</div>
+</div>
+<!-- Metadata & Title -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed/60 text-secondary font-label-sm text-label-sm font-semibold">
+                Ekonomi &amp; Bisnis
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug line-clamp-2">
+              Ekonomi Digital &amp; Transformasi Finansial
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Anisa Rahmawati, S.E., M.B.A • 2023
+            </p>
+<div class="flex items-center gap-2 pt-1 font-label-sm text-label-sm text-on-surface-variant/80">
+<span class="material-symbols-outlined text-xs">barcode</span>
+<span>978-602-12-8822-0</span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center justify-between gap-1.5 pt-space-md mt-space-md border-t-0 bg-surface-container-low/40 p-2 rounded-2xl backdrop-blur-md">
+<button class="flex-1 py-1.5 px-2 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md text-center transition-all shadow-xs flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span>Detail</span>
+</button>
+<button class="py-1.5 px-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed font-label-md text-label-md transition-all shadow-xs flex items-center justify-center gap-1" title="Sunting Buku" type="button">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span class="hidden sm:inline">Edit</span>
+</button>
+<button class="py-1.5 px-2.5 rounded-full bg-surface-container-lowest/60 hover:bg-error-container text-error transition-all flex items-center justify-center" title="Hapus Buku" type="button">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- FROSTED GLASS PAGINATION ROW -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md p-space-md rounded-full bg-surface-container-lowest/60 backdrop-blur-2xl shadow-[0_8px_32px_-4px_rgba(30,41,59,0.05),inset_0_1px_2px_rgba(255,255,255,0.9)] my-space-md">
+<!-- Item Info -->
+<div class="font-label-md text-label-md text-on-surface-variant pl-space-md flex items-center gap-2">
+<span class="material-symbols-outlined text-base">auto_stories</span>
+<span>Menampilkan <strong class="text-on-surface">1 - 8</strong> dari <strong class="text-on-surface">1.482</strong> koleksi buku</span>
+</div>
+<!-- Controls & Pages -->
+<div class="flex items-center gap-1.5 pr-1">
+<!-- Prev Button -->
+<button aria-label="Halaman Sebelumnya" class="w-9 h-9 rounded-full bg-surface-container-low/50 text-on-surface-variant/40 flex items-center justify-center cursor-not-allowed transition-colors" disabled="" type="button">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<!-- Page Numbers -->
+<button class="w-9 h-9 rounded-full bg-primary-container text-on-primary font-label-md text-label-md shadow-[0_2px_10px_rgba(124,58,237,0.3)] flex items-center justify-center" type="button">
+          1
+        </button>
+<button class="w-9 h-9 rounded-full hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center" type="button">
+          2
+        </button>
+<button class="w-9 h-9 rounded-full hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center" type="button">
+          3
+        </button>
+<span class="px-1 text-on-surface-variant font-label-md">...</span>
+<button class="w-9 h-9 rounded-full hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center" type="button">
+          48
+        </button>
+<!-- Next Button -->
+<button aria-label="Halaman Berikutnya" class="w-9 h-9 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface flex items-center justify-center shadow-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full py-space-lg"><div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-md text-label-md"><span>© 2025 Sistem Informasi Perpustakaan. Hak Cipta Dilindungi.</span><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Bantuan</a><a class="hover:text-on-surface transition-colors" href="#">Kebijakan Privasi</a><a class="hover:text-on-surface transition-colors" href="#">Ketentuan Layanan</a></div></div></footer></body></html>
