@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
+use App\Models\Category;
+use App\Models\Member;
+
 class DashboardController extends Controller
 {
     public function index()
@@ -9,9 +13,9 @@ class DashboardController extends Controller
         $title = 'Library System';
         $description = 'Sistem Informasi Perpustakaan Sederhana';
 
-        $bookCount = 8;
-        $memberCount = 5;
-        $categoryCount = 5;
+        $bookCount = Book::count();
+        $memberCount = Member::count();
+        $categoryCount = Category::count();
 
         return view('dashboard.index', compact(
             'title',
