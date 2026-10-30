@@ -10,7 +10,7 @@
             <h1 class="font-headline-xl text-headline-xl lg:text-display-lg text-on-surface tracking-tight font-bold">Data Member</h1>
             <div class="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-surface-container-low/80 backdrop-blur-xl shadow-xs border border-white/60">
                 <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                <span class="font-label-md text-label-md text-primary font-semibold">{{ count($members) }} Member Terdaftar</span>
+                <span class="font-label-md text-label-md text-primary font-semibold">{{ $members->count() }} Member Terdaftar</span>
             </div>
         </div>
     </div>
@@ -30,10 +30,10 @@
         @forelse($members as $member)
             <div class="group relative rounded-2xl bg-surface-container-lowest/70 backdrop-blur-xl p-4 sm:p-5 border border-white/70 shadow-[0_4px_20px_-2px_rgba(30,41,59,0.03)] hover:shadow-[0_12px_32px_-4px_rgba(99,14,212,0.08)] hover:bg-surface-container-lowest/90 transition-all duration-300 flex items-center gap-4">
                 <div class="relative shrink-0 w-12 h-12 rounded-full {{ $avatarThemes[$loop->index % count($avatarThemes)] }} flex items-center justify-center font-headline-md text-headline-md font-bold select-none">
-                    {{ \Illuminate\Support\Str::upper(\Illuminate\Support\Str::substr($member, 0, 2)) }}
+                    {{ \Illuminate\Support\Str::upper(\Illuminate\Support\Str::substr($member->name, 0, 2)) }}
                 </div>
                 <div class="flex flex-col min-w-0">
-                    <h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight truncate">{{ $member }}</h2>
+                    <h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight truncate">{{ $member->name }}</h2>
                 </div>
             </div>
         @empty

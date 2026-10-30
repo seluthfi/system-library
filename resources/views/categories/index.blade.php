@@ -10,7 +10,7 @@
             <h1 class="font-headline-xl text-headline-xl lg:text-display-lg text-on-surface tracking-tight font-bold">Kategori Buku</h1>
             <div class="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-surface-container-low/80 backdrop-blur-xl shadow-xs border border-white/60">
                 <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-                <span class="font-label-md text-label-md text-secondary font-semibold">Total {{ count($categories) }} Kategori</span>
+                <span class="font-label-md text-label-md text-secondary font-semibold">Total {{ $categories->count() }} Kategori</span>
             </div>
         </div>
     </div>
@@ -61,14 +61,20 @@
             @php
                 $palette = $palettes[$loop->index % count($palettes)];
             @endphp
-            <div class="group relative rounded-3xl p-6 bg-gradient-to-br {{ $palette['bg'] }} backdrop-blur-2xl border border-white/70 shadow-[0_12px_36px_-6px_rgba(30,41,59,0.06),0_2px_8px_rgba(30,41,59,0.03)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center gap-5 overflow-hidden">
+            <div class="group relative rounded-3xl p-6 bg-gradient-to-br {{ $palette['bg'] }} backdrop-blur-2xl border border-white/70 shadow-[0_12px_36px_-6px_rgba(30,41,59,0.06),0_2px_8px_rgba(30,41,59,0.03)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-between gap-4 overflow-hidden">
                 <div class="absolute -top-12 -right-12 w-36 h-36 rounded-full {{ $palette['glow'] }} blur-2xl group-hover:scale-125 transition-all pointer-events-none"></div>
-                <div class="w-14 h-14 rounded-2xl {{ $palette['icon_bg'] }} shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),0_6px_16px_rgba(30,41,59,0.06)] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                    <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">{{ $palette['icon'] }}</span>
+                <div class="flex items-center gap-4 min-w-0">
+                    <div class="w-14 h-14 rounded-2xl {{ $palette['icon_bg'] }} shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),0_6px_16px_rgba(30,41,59,0.06)] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                        <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">{{ $palette['icon'] }}</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="w-2 h-2 rounded-full {{ $palette['dot'] }} shrink-0"></span>
+                        <h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight truncate">{{ $category->name }}</h2>
+                    </div>
                 </div>
-                <div class="flex items-center gap-2.5 min-w-0">
-                    <span class="w-2 h-2 rounded-full {{ $palette['dot'] }} shrink-0"></span>
-                    <h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight truncate">{{ $category }}</h2>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md shadow-xs text-on-surface-variant font-label-md text-label-md shrink-0 border border-white/60">
+                    <span class="material-symbols-outlined text-sm text-primary">menu_book</span>
+                    <span>{{ $category->books_count }} Buku</span>
                 </div>
             </div>
         @empty

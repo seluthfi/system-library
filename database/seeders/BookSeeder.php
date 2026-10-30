@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Book;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 class BookSeeder extends Seeder
@@ -13,39 +13,56 @@ class BookSeeder extends Seeder
      */
     public function run(): void
     {
-        Book::create([
-            'title' => 'Pemrograman PHP',
-            'author' => 'Luthfi',
-            'year' => 2024,
-            'stock' => 5,
-        ]);
+        $books = [
+            [
+                'title' => 'Pemrograman PHP',
+                'author' => 'Luthfi',
+                'year' => 2024,
+                'stock' => 5,
+                'category' => 'Pemrograman',
+            ],
+            [
+                'title' => 'Laravel untuk Pemula',
+                'author' => 'Rizqi',
+                'year' => 2023,
+                'stock' => 8,
+                'category' => 'Pemrograman',
+            ],
+            [
+                'title' => 'Big Data',
+                'author' => 'Rahman',
+                'year' => 2025,
+                'stock' => 10,
+                'category' => 'Basis Data',
+            ],
+            [
+                'title' => 'Algoritma dan Pemrograman',
+                'author' => 'Juneo',
+                'year' => 2024,
+                'stock' => 7,
+                'category' => 'Algoritma',
+            ],
+            [
+                'title' => 'Pemrograman Berorientasi Objek',
+                'author' => 'Zhilan',
+                'year' => 2024,
+                'stock' => 6,
+                'category' => 'Pemrograman',
+            ],
+        ];
 
-        Book::create([
-            'title' => 'Laravel untuk Pemula',
-            'author' => 'Rizqi',
-            'year' => 2023,
-            'stock' => 8,
-        ]);
+        foreach ($books as $book) {
+            $categoryId = Category::where('name', $book['category'])->value('id');
 
-        Book::create([
-            'title' => 'Big Data',
-            'author' => 'Rahman',
-            'year' => 2025,
-            'stock' => 10,
-        ]);
-
-        Book::create([
-            'title' => 'Algoritma dan Pemrograman',
-            'author' => 'Juneo',
-            'year' => 2024,
-            'stock' => 7,
-        ]);
-
-        Book::create([
-            'title' => 'Pemrograman Berorientasi Objek',
-            'author' => 'Zhilan',
-            'year' => 2024,
-            'stock' => 6,
-        ]);
+            Book::firstOrCreate(
+                ['title' => $book['title']],
+                [
+                    'author' => $book['author'],
+                    'year' => $book['year'],
+                    'stock' => $book['stock'],
+                    'category_id' => $categoryId,
+                ]
+            );
+        }
     }
 }
